@@ -1,0 +1,49 @@
+.color-blue {
+    color: #0066cc;
+}
+
+body { 
+    color: #2f4f4f;
+    font-family: 'Calibri' ;sans-serif;
+    line-height: 28px;
+ }
+
+.primary-btn {
+    color: white;
+    background-color: #0066cc;
+    border-radius: 20px;
+    padding: 13px 42px;
+    text-decoration: none;
+ }
+
+h1 { 
+    font-size: 2.5em ;
+}
+
+.half-width {
+    float: left;   
+    width: 50%; 
+}
+
+.side-img {
+    width: 50%;
+    padding-left: 25%; 
+    
+    
+.container {
+   padding-left: 5%; 
+   display: inline-block;
+    }
+    
+.experiences {
+    padding: 30px;
+    margin: 30px;
+    border-radius: 20px;
+    background-color:#cce6ff;
+}   
+ 
+.experience-item {
+    padding: 10px;
+    border-left: 1px solid #66b3ff;
+}
+ 
