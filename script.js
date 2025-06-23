@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
         `).join('');
 
         return `
-            <aside class="right-banner bg-light-blue shadow-lg rounded-tl-xl rounded-bl-xl p-6 hidden lg:flex flex-col items-center">
+            <aside class="right-banner bg-steel-blue shadow-lg rounded-tl-xl rounded-bl-xl p-6 hidden lg:flex flex-col items-center">
                 <img src="${config.profilePicUrl}" alt="Your Profile Picture" class="profile-pic mb-6 shadow-md">
-                <h2 class="text-2xl font-bold text-dark-blue mb-4">About Me</h2>
+                <h2 class="text-2xl font-bold text-dark-blue mb-4">Kaadjal</h2>
                 <p class="text-gray-700 text-sm mb-6">
                     Data Analyst | Data Scientist | Tech Enthousiast | Lifelong Learner
                 </p>
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).join('');
 
         return `
-            <footer class="footer bg-royal-blue text-white shadow-lg">
+            <footer class="footer bg-steel-blue text-white shadow-lg">
                 <p class="copyright-text">${config.copyrightText}</p>
                 <div class="footer-links-row flex justify-center items-center mt-2">
                     <div class="social-links flex mr-4">
