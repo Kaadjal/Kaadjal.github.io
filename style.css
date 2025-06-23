@@ -1,0 +1,258 @@
+/* Custom CSS for fixed elements, colors, and overrides */
+
+/* Define custom colors using CSS variables for shades of blue */
+/* These will be used alongside Tailwind's utility classes */
+.text-dark-blue {
+    color: var(--color-dark-blue); /* Dark Blue */
+}
+
+.bg-dark-blue {
+    background-color: var(--color-dark-blue);
+}
+
+.border-dark-blue {
+    border-color: var(--color-dark-blue);
+}
+
+.text-light-blue {
+    color: var(--color-light-blue); /* Light Blue */
+}
+
+.bg-light-blue {
+    background-color: var(--color-light-blue);
+}
+
+.text-sky-blue {
+    color: var(--color-sky-blue); /* Sky Blue */
+}
+
+.bg-sky-blue {
+    background-color: var(--color-sky-blue);
+}
+
+.text-cornflower-blue {
+    color: var(--color-cornflower-blue); /* Cornflower Blue */
+}
+
+.bg-cornflower-blue {
+    background-color: var(--color-cornflower-blue);
+}
+
+/* Fixed Top Banner */
+.top-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Adjust height as needed */
+    z-index: 50; /* Ensure it's above other content */
+    background-color: var(--color-dark-blue); /* Default fallback */
+    background-image: url('https://placehold.co/1920x80/00008B/FFFFFF?text=Your+Banner+Image'); /* Replace with your actual banner image URL */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide overflowing parts of the background image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 139, 0.5); /* Dark blue with 50% opacity */
+    z-index: 1; /* Place overlay above background image but below text */
+}
+
+.top-banner .banner-text {
+    position: relative;
+    z-index: 2; /* Place text above overlay */
+    color: white;
+    font-size: 2.5rem; /* Large font size */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Fixed Right-Side Banner */
+.right-banner {
+    position: fixed;
+    top: 80px; /* Below the top banner */
+    right: 0;
+    width: 300px; /* Width of the banner */
+    height: calc(100vh - 160px); /* Full viewport height minus top and bottom banner height */
+    z-index: 40; /* Ensure it's above main content but potentially below top banner */
+    background-color: var(--color-light-blue);
+    overflow-y: auto; /* Enable scrolling if content exceeds height */
+    padding: 20px;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* For smaller screens, hide the right banner */
+@media (max-width: 1024px) { /* Adjust breakpoint as needed, 'lg' in Tailwind */
+    .right-banner {
+        display: none;
+    }
+    body {
+        padding-right: 0px; /* Remove padding when right banner is hidden */
+    }
+}
+
+/* Fixed Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Height of the footer */
+    z-index: 50; /* Ensure it's above other content */
+    background-color: var(--color-dark-blue);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer .copyright-text {
+    font-size: 0.9rem; /* Smaller text for copyright */
+    margin-bottom: 5px;
+}
+
+.footer .social-links a {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer .social-links a:hover {
+    color: var(--color-sky-blue);
+}
+
+.footer .about-link a {
+    color: var(--color-light-blue);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer .about-link a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Main Content Area adjustments to prevent overlap */
+.main-content-wrapper {
+    /* The padding on the body handles the main spacing */
+    min-height: calc(100vh - 160px); /* Ensures content pushes footer down if not enough content */
+    margin-left: auto; /* Center content horizontally */
+    margin-right: auto;
+    max-width: 100%; /* Ensure it's responsive */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    padding-left: 1rem; /* Small left padding for mobile */
+    padding-right: 1rem; /* Small right padding for mobile */
+}
+
+@media (min-width: 1024px) { /* Adjust breakpoint as needed */
+    .main-content-wrapper {
+        padding-right: 20px; /* Small gap to right banner if it's visible */
+        max-width: calc(100% - 300px); /* Max width considering right banner */
+    }
+}
+
+/* Responsive Image Handling for large images in blog posts/projects */
+.large-image {
+    max-width: 100%; /* Ensure images don't overflow their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+}
+
+/* Profile Picture styling */
+.profile-pic {
+    width: 150px; /* Fixed size for profile picture */
+    height: 150px;
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    border: 4px solid var(--color-cornflower-blue); /* Border around profile pic */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for buttons in the right banner */
+.right-banner-button {
+    width: 80%; /* Make buttons fill most of the banner width */
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--color-cornflower-blue);
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; /* Allows for centering and proper sizing */
+}
+
+.right-banner-button:hover {
+    background-color: var(--color-sky-blue);
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for social icons in the right banner */
+.right-banner .social-icons a {
+    color: var(--color-dark-blue);
+    font-size: 1.8rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.right-banner .social-icons a:hover {
+    color: var(--color-cornflower-blue);
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Style for the small image banner in the right-side banner */
+.right-banner .image-text-banner {
+    width: 100%;
+    background-color: var(--color-dark-blue);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    background-image: url('https://placehold.co/300x100/00008B/FFFFFF?text=Interesting+Fact'); /* Placeholder, replace with your image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-banner .image-text-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 139, 0.6); /* Dark blue with 60% opacity */
+    z-index: 1;
+}
+
+.right-banner .image-text-banner-content {
+    position: relative;
+    z-index: 2;
+}
