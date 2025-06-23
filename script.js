@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rightBannerImageUrl: "photo.png", // URL for the small image banner background
         copyrightText: "© 2025 Kaadjal. All rights reserved.", // Footer copyright text
         socialMedia: {
-            linkedin: "https://www.linkedin.com/in/yourprofile", // Replace with your LinkedIn URL
+            linkedin: "https://www.linkedin.com/in/tanuja-ramsaransing", // Replace with your LinkedIn URL
             wellfound: "https://wellfound.com/u/yourprofile",   // Replace with your Wellfound (AngelList) URL
             github: "https://github.com/kaadjal",         // Replace with your GitHub URL
             // Add more social links here (e.g., twitter: "https://twitter.com/yourhandle")
@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     [Your brief tagline or introduction. e.g., "Passionate developer building innovative web solutions."]
                 </p>
                 <nav class="flex flex-col items-center w-full">
-                    <a href="index.html" class="right-banner-button">Home</a> <!-- NEW HOME BUTTON -->
+                    <a href="index.html" class="right-banner-button">Home</a>
                     <a href="about.html" class="right-banner-button">About Me</a>
                     <a href="projects.html" class="right-banner-button">Projects</a>
+                    <a href="photography.html" class="right-banner-button">Photography</a>
                 </nav>
 
                 <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
@@ -97,11 +98,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return `
             <footer class="footer bg-dark-blue text-white shadow-lg">
                 <p class="copyright-text">${config.copyrightText}</p>
-                <div class="social-links flex mt-2">
-                    ${socialLinksHTML}
-                </div>
-                <div class="about-link mt-1">
-                    <a href="about.html" class="hover:underline transition duration-300">About Me</a>
+                <div class="footer-links-row flex justify-center items-center mt-2">
+                    <div class="social-links flex mr-4">
+                        ${socialLinksHTML}
+                    </div>
+                    <div class="about-link">
+                        <a href="about.html" class="hover:underline transition duration-300">About Me</a>
+                    </div>
                 </div>
             </footer>
         `;
@@ -121,6 +124,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
         footerPlaceholder.innerHTML = getFooterHTML();
+        // Get the actual footer element after it's injected
+        const footer = footerPlaceholder.querySelector('.footer');
+
+        // Scroll event listener for the footer visibility
+        window.addEventListener('scroll', () => {
+            // Calculate current scroll position (viewport bottom)
+            const scrollPosition = window.scrollY + window.innerHeight;
+            // Total height of the scrollable content
+            const totalHeight = document.body.offsetHeight; // Use document.body for simplicity, can use document.documentElement.scrollHeight as well
+
+            // Define a threshold (e.g., show footer when 150px from the bottom)
+            const scrollThreshold = 150; // Adjust this value as needed
+
+            if (scrollPosition >= totalHeight - scrollThreshold) {
+                // Show the footer
+                footer.style.opacity = '1';
+                footer.style.pointerEvents = 'auto'; // Re-enable interactions
+            } else {
+                // Hide the footer
+                footer.style.opacity = '0';
+                footer.style.pointerEvents = 'none'; // Disable interactions when hidden
+            }
+        });
+
+        // Trigger scroll event once on load to check initial position (for short pages)
+        window.dispatchEvent(new Event('scroll'));
     }
 
     // --- Image Resize Functionality (for large blog/project images) ---
