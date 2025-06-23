@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).join('');
 
         return `
-            <footer class="footer bg-dark-blue text-white shadow-lg">
+            <footer class="footer bg-royal-blue text-white shadow-lg">
                 <p class="copyright-text">${config.copyrightText}</p>
                 <div class="footer-links-row flex justify-center items-center mt-2">
                     <div class="social-links flex mr-4">
