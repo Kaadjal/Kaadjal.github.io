@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
         return `
             <nav class="nav-bar-container bg-cornflower-blue shadow-lg">
                 <a href="index.html" class="nav-button">Home</a>
-                <a href="about.html" class="nav-button">About Me</a>
                 <a href="projects.html" class="nav-button">Projects</a>
                 <a href="photography.html" class="nav-button">Photography</a>
+                <a href="about.html" class="nav-button">About Me</a>
             </nav>
         `;
     }
