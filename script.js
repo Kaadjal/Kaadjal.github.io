@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add more social links here (e.g., twitter: "https://twitter.com/yourhandle")
         },
         skills: [
-            "Python", "PowerBI", "Tableau", "SQL",
-            "Data Analysis", "Data Modelling", "Data Visualisation" 
+            "Python", "PowerBI", "Tableau", "SQL", "Data Analysis", 
         ]
     };
 
