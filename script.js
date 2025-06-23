@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         profilePicUrl: "kaadjal.png", // URL for your profile picture in the right banner
         rightBannerImageText: "Photography", // Text for the small image banner
         rightBannerImageLink: "#", // Link for the small image banner
-        rightBannerImageUrl: "https://placehold.co/300x100/00008B/FFFFFF?text=Interesting+Fact", // URL for the small image banner background
+        rightBannerImageUrl: "photo.png", // URL for the small image banner background
         copyrightText: "© 2025 Kaadjal. All rights reserved.", // Footer copyright text
         socialMedia: {
             linkedin: "https://www.linkedin.com/in/yourprofile", // Replace with your LinkedIn URL
@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add more social links here (e.g., twitter: "https://twitter.com/yourhandle")
         },
         skills: [
-            "PowerBI", "Python", "React.js", "SQL",
-            "Git", "Data Analysis", "Data Modelling", "Data Visualisation"
+            "Python", "PowerBI", "Tableau", "SQL",
+            "Data Modelling", "Git", "Data Visualisation", "Data Analysis"
         ]
     };
 
@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     [Your brief tagline or introduction. e.g., "Passionate developer building innovative web solutions."]
                 </p>
                 <nav class="flex flex-col items-center w-full">
+                    <a href="index.html" class="right-banner-button">Home</a> <!-- NEW HOME BUTTON -->
                     <a href="about.html" class="right-banner-button">About Me</a>
                     <a href="projects.html" class="right-banner-button">Projects</a>
                 </nav>
