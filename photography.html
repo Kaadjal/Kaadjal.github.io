@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaadjal - Photography</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Configure Tailwind to use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Padding for fixed banners (top, right, bottom) */
+            padding-top: 80px; /* Height of the top banner */
+            padding-right: 320px; /* Width of the right banner */
+            padding-bottom: 80px; /* Height of the footer */
+            background-color: #f0f8ff; /* Lightest blue for overall background */
+        }
+        /* Override Tailwind's default scroll behavior if necessary for fixed elements */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom colors for Tailwind */
+        :root {
+            --color-dark-blue: #00008b; /* Dark Blue */
+            --color-light-blue: #add8e6; /* Light Blue */
+            --color-sky-blue: #87ceeb; /* Sky Blue */
+            --color-cornflower-blue: #6495ed; /* Cornflower Blue */
+        }
+    </style>
+</head>
+<body class="bg-blue-50">
+    <!-- Placeholder for the Top Banner - Injected by script.js -->
+    <div id="top-banner-placeholder"></div>
+
+    <!-- Placeholder for the Right-Side Banner - Injected by script.js -->
+    <div id="right-banner-placeholder"></div>
+
+    <!-- Main Content Area -->
+    <div class="main-content-wrapper flex justify-center py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl w-full">
+            <h1 class="text-4xl font-bold text-dark-blue mb-8 text-center">My Photography Portfolio</h1>
+
+            <!-- Example Photo Gallery Section -->
+            <section class="bg-white rounded-lg shadow-lg p-6 mb-8 text-center">
+                <h2 class="text-3xl font-semibold text-cornflower-blue mb-6">Landscape Photography</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Photo Item 1 -->
+                    <div class="photo-item">
+                        <img src="https://placehold.co/400x300/87CEEB/00008B?text=Mountain" alt="Mountain Landscape" class="w-full h-auto rounded-lg shadow-md large-image">
+                        <p class="text-gray-700 text-sm mt-2">Serene mountain view during sunset.</p>
+                    </div>
+                    <!-- Photo Item 2 -->
+                    <div class="photo-item">
+                        <img src="https://placehold.co/400x300/ADD8E6/00008B?text=Forest" alt="Forest Landscape" class="w-full h-auto rounded-lg shadow-md large-image">
+                        <p class="text-gray-700 text-sm mt-2">Misty morning in the ancient forest.</p>
+                    </div>
+                    <!-- Photo Item 3 -->
+                    <div class="photo-item">
+                        <img src="https://placehold.co/400x300/6495ED/FFFFFF?text=Lake" alt="Lake Landscape" class="w-full h-auto rounded-lg shadow-md large-image">
+                        <p class="text-gray-700 text-sm mt-2">Crystal clear lake reflections.</p>
+                    </div>
+                    <!-- Add more landscape photos here -->
+                </div>
+            </section>
+
+            <!-- Example Photo Gallery Section 2 -->
+            <section class="bg-white rounded-lg shadow-lg p-6 mb-8 text-center">
+                <h2 class="text-3xl font-semibold text-cornflower-blue mb-6">Urban & Street Photography</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Photo Item 1 -->
+                    <div class="photo-item">
+                        <img src="https://placehold.co/400x300/00008B/FFFFFF?text=Cityscape" alt="Cityscape at Night" class="w-full h-auto rounded-lg shadow-md large-image">
+                        <p class="text-gray-700 text-sm mt-2">Vibrant city lights at twilight.</p>
+                    </div>
+                    <!-- Photo Item 2 -->
+                    <div class="photo-item">
+                        <img src="https://placehold.co/400x300/ADD8E6/00008B?text=Street+Art" alt="Street Art" class="w-full h-auto rounded-lg shadow-md large-image">
+                        <p class="text-gray-700 text-sm mt-2">Capturing the essence of urban art.</p>
+                    </div>
+                    <!-- Photo Item 3 -->
+                    <div class="photo-item">
+                        <img src="https://placehold.co/400x300/87CEEB/00008B?text=People" alt="Candid Street Shot" class="w-full h-auto rounded-lg shadow-md large-image">
+                        <p class="text-gray-700 text-sm mt-2">Candid moments in a bustling street.</p>
+                    </div>
+                    <!-- Add more urban/street photos here -->
+                </div>
+            </section>
+
+            <!-- You can add more sections for different photography categories -->
+
+        </div>
+    </div>
+
+    <!-- Placeholder for the Footer - Injected by script.js -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
