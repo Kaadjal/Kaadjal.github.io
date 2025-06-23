@@ -1,6 +1,6 @@
 # Kaadjal.github.io
 
-####build of this site
+#### Build of this site
 * index.html: The main page.
 * about.html: The dedicated About Me page.
 * projects.html: The dedicated Projects page.
