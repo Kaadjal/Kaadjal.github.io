@@ -30,6 +30,10 @@
     background-color: var(--color-sky-blue);
 }
 
+.bg-steel-blue {
+    background-color: var(--color-steel-blue);
+}
+
 .bg-royal-blue {
     background-color: var(--color-royal-blue);
 }
