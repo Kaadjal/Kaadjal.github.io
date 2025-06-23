@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         skills: [
             "Python", "PowerBI", "Tableau", "SQL",
-            "Data Modelling", "Git", "Data Visualisation", "Data Analysis"
+            "Data Analysis" 
         ]
     };
 
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="${config.profilePicUrl}" alt="Your Profile Picture" class="profile-pic mb-6 shadow-md">
                 <h2 class="text-2xl font-bold text-dark-blue mb-4">About Me</h2>
                 <p class="text-gray-700 text-sm mb-6">
-                    [Your brief tagline or introduction. e.g., "Passionate developer building innovative web solutions."]
+                    Data Analyst | Data Scientist | Tech Enthousiast | Lifelong Learner
                 </p>
                 <!-- Navigation buttons removed from here -->
 
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).join('');
 
         return `
-            <footer class="footer bg-dark-blue text-white shadow-lg">
+            <footer class="footer bg-royal-blue text-white shadow-lg">
                 <p class="copyright-text">${config.copyrightText}</p>
                 <div class="footer-links-row flex justify-center items-center mt-2">
                     <div class="social-links flex mr-4">
