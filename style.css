@@ -86,7 +86,7 @@
     width: 300px; /* Width of the banner */
     height: calc(100vh - 160px); /* Full viewport height minus top and bottom banner height */
     z-index: 40; /* Ensure it's above main content but potentially below top banner */
-    background-color: var(--color-light-blue);
+    background-color: var(--color-light-sky-blue);
     overflow-y: auto; /* Enable scrolling if content exceeds height */
     padding: 20px;
     box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
