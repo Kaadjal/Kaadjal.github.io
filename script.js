@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         skills: [
             "Python", "PowerBI", "Tableau", "SQL",
-            "Data Analysis" 
+            "Data Analysis", "Data Modelling", "Data Visualisation" 
         ]
     };
 
