@@ -29,6 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
+    // --- Generate Navigation Bar HTML ---
+    // This new function creates the horizontal navigation buttons
+    function getNavBarHTML() {
+        return `
+            <nav class="nav-bar-container bg-cornflower-blue shadow-lg">
+                <a href="index.html" class="nav-button">Home</a>
+                <a href="about.html" class="nav-button">About Me</a>
+                <a href="projects.html" class="nav-button">Projects</a>
+                <a href="photography.html" class="nav-button">Photography</a>
+            </nav>
+        `;
+    }
+
     // --- Generate Right-Side Banner HTML ---
     function getRightBannerHTML() {
         const socialIconsHTML = Object.entries(config.socialMedia).map(([platform, url]) => {
@@ -54,12 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="text-gray-700 text-sm mb-6">
                     [Your brief tagline or introduction. e.g., "Passionate developer building innovative web solutions."]
                 </p>
-                <nav class="flex flex-col items-center w-full">
-                    <a href="index.html" class="right-banner-button">Home</a>
-                    <a href="about.html" class="right-banner-button">About Me</a>
-                    <a href="projects.html" class="right-banner-button">Projects</a>
-                    <a href="photography.html" class="right-banner-button">Photography</a>
-                </nav>
+                <!-- Navigation buttons removed from here -->
 
                 <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
                      style="background-image: url('${config.rightBannerImageUrl}');">
@@ -96,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).join('');
 
         return `
-            <footer class="footer bg-royal-blue text-white shadow-lg">
+            <footer class="footer bg-dark-blue text-white shadow-lg">
                 <p class="copyright-text">${config.copyrightText}</p>
                 <div class="footer-links-row flex justify-center items-center mt-2">
                     <div class="social-links flex mr-4">
@@ -116,6 +124,12 @@ document.addEventListener('DOMContentLoaded', function() {
         topBannerPlaceholder.innerHTML = getTopBannerHTML();
     }
 
+    // NEW: Inject Navigation Bar
+    const navBarPlaceholder = document.getElementById('nav-bar-placeholder');
+    if (navBarPlaceholder) {
+        navBarPlaceholder.innerHTML = getNavBarHTML();
+    }
+
     const rightBannerPlaceholder = document.getElementById('right-banner-placeholder');
     if (rightBannerPlaceholder) {
         rightBannerPlaceholder.innerHTML = getRightBannerHTML();
@@ -124,44 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
         footerPlaceholder.innerHTML = getFooterHTML();
-        // Get the actual footer element after it's injected
-        const footer = footerPlaceholder.querySelector('.footer');
-
-        // Scroll event listener for the footer visibility
-        window.addEventListener('scroll', () => {
-            // Calculate current scroll position (viewport bottom)
-            const scrollPosition = window.scrollY + window.innerHeight;
-            // Total height of the scrollable content
-            const totalHeight = document.body.offsetHeight; // Use document.body for simplicity, can use document.documentElement.scrollHeight as well
-
-            // Define a threshold (e.g., show footer when 150px from the bottom)
-            const scrollThreshold = 150; // Adjust this value as needed
-
-            if (scrollPosition >= totalHeight - scrollThreshold) {
-                // Show the footer
-                footer.style.opacity = '1';
-                footer.style.pointerEvents = 'auto'; // Re-enable interactions
-            } else {
-                // Hide the footer
-                footer.style.opacity = '0';
-                footer.style.pointerEvents = 'none'; // Disable interactions when hidden
-            }
-        });
-
-        // Trigger scroll event once on load to check initial position (for short pages)
-        window.dispatchEvent(new Event('scroll'));
+        // Removed the scroll event listener as the footer is no longer fixed
     }
 
     // --- Image Resize Functionality (for large blog/project images) ---
-    // This function ensures large images maintain aspect ratio and fit within their container.
-    // CSS handles most of this with `max-width: 100%; height: auto;`,
-    // but this JS can be extended for more complex resizing if needed (e.g., dynamic modals).
     function setupResponsiveImages() {
         document.querySelectorAll('.main-content-wrapper img.large-image').forEach(img => {
-            // No direct JS resizing for simple responsive behavior as CSS handles it.
-            // This loop is here to demonstrate where you'd add more complex JS image logic
-            // if you wanted a lightbox, lazy loading, or dynamic sizing based on content.
-            // For now, the CSS `max-width: 100%; height: auto;` is sufficient for the request.
             console.log(`Processing image: ${img.src}`);
         });
     }
