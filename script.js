@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bannerImageUrl: "banner.png", // URL for the top banner background image
         profilePicUrl: "kaadjal.png", // URL for your profile picture in the right banner
         rightBannerImageText: "Photography", // Text for the small image banner
-        rightBannerImageLink: "#", // Link for the small image banner
+        rightBannerImageLink: "photography.html", // Link for the small image banner
         rightBannerImageUrl: "photo.png", // URL for the small image banner background
         copyrightText: "© 2025 Kaadjal. All rights reserved.", // Footer copyright text
         socialMedia: {
