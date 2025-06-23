@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Configuration for Banners and Footer (EDIT THESE VALUES) ---
     const config = {
         pageName: "Tanuja Kaadjal Ramsaransing", // Name displayed in the top banner
-        bannerImageUrl: "https://placehold.co/1920x80/00008B/FFFFFF?text=Your+Banner+Image", // URL for the top banner background image
+        bannerImageUrl: "banner.png", // URL for the top banner background image
         profilePicUrl: "kaadjal.png", // URL for your profile picture in the right banner
-        rightBannerImageText: "Curious about my tech stack?", // Text for the small image banner
+        rightBannerImageText: "Photography", // Text for the small image banner
         rightBannerImageLink: "#", // Link for the small image banner
         rightBannerImageUrl: "https://placehold.co/300x100/00008B/FFFFFF?text=Interesting+Fact", // URL for the small image banner background
-        copyrightText: "© 2025 Your Name. All rights reserved.", // Footer copyright text
+        copyrightText: "© 2025 Kaadjal. All rights reserved.", // Footer copyright text
         socialMedia: {
             linkedin: "https://www.linkedin.com/in/yourprofile", // Replace with your LinkedIn URL
             wellfound: "https://wellfound.com/u/yourprofile",   // Replace with your Wellfound (AngelList) URL
