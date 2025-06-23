@@ -1,45 +1,85 @@
-<!-- This content will be loaded into #sidebar-placeholder on all pages -->
-<aside class="main-sidebar">
-    <div class="sidebar-profile">
-        <img src="kaadjal.png" alt="Your Photo" class="profile-photo">
-        <h2 class="profile-name">Kaadjal</h2>
-        <p class="profile-tagline">Data Analyst | Data Scientist | Tech Enthusiast | Lifelong Learner</p>
+<!-- sidebar.html -->
+<!-- This file contains the HTML for the fixed right sidebar. -->
+<aside class="fixed top-0 right-0 bottom-0 z-40 w-full sm:w-80 bg-blue-900 text-white p-6 shadow-xl overflow-y-auto hidden md:block rounded-l-lg">
+    <div class="flex flex-col items-center mb-8">
+        <!-- Profile Photo -->
+        <!-- This image retains its fixed w-32 h-32 dimensions and uses object-cover to fit the square space, -->
+        <!-- as this is a common setup for fixed-size profile pictures. -->
+        <img src="kaadjal.png" alt="Your Photo"
+            class="rounded-full border-4 border-blue-400 mb-4 shadow-lg w-32 h-32 object-cover">
+        <h2 class="text-3xl font-semibold text-blue-100 mb-2">Kaadjal</h2>
+        <p class="text-blue-200 text-center">Data Analyst | Data Scientist | Tech Enthusiast | Lifelong Learner</p>
     </div>
 
-    <nav class="sidebar-nav">
-        <ul class="nav-list">
-            <li>
-                <a href="about.html" class="nav-link">
-                    <i class="fas fa-user-circle nav-icon"></i>About Me
+    <!-- Navigation Links -->
+    <nav class="mb-8 text-center">
+        <ul>
+            <li class="mb-4">
+                <a href="index.html" class="block py-3 px-6 text-xl font-medium text-blue-100 hover:bg-blue-700 hover:text-white rounded-lg transition duration-300 ease-in-out nav-link" data-page="home">
+                    <i class="fas fa-home mr-3"></i>Blog / Home
                 </a>
             </li>
-            <li>
-                <a href="projects.html" class="nav-link">
-                    <i class="fas fa-laptop-code nav-icon"></i>Projects
+            <li class="mb-4">
+                <a href="about.html" class="block py-3 px-6 text-xl font-medium text-blue-100 hover:bg-blue-700 hover:text-white rounded-lg transition duration-300 ease-in-out nav-link" data-page="about">
+                    <i class="fas fa-user-circle mr-3"></i>About Me
                 </a>
             </li>
-            <!-- Add more navigation links as needed -->
+            <li class="mb-4">
+                <a href="projects.html" class="block py-3 px-6 text-xl font-medium text-blue-100 hover:bg-blue-700 hover:text-white rounded-lg transition duration-300 ease-in-out nav-link" data-page="projects">
+                    <i class="fas fa-folder-open mr-3"></i>Projects
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <div class="skill-section">
-        <div class="skill-banner-container">
-            <img src="https://placehold.co/300x100/3b82f6/eff6ff?text=Skill+Banner" alt="Skill Banner" class="skill-banner-image">
-            <p class="skill-banner-text">
-                My Skills Showcase
-            </p>
+    <!-- Social Media Links -->
+    <div class="mb-8 text-center">
+        <h3 class="text-2xl font-semibold text-blue-100 mb-4">Connect With Me</h3>
+        <div class="flex justify-center space-x-6">
+            <!--linkedin-->
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"
+                class="text-blue-300 hover:text-white transition duration-300 ease-in-out text-4xl">
+                <i class="fab fa-linkedin"></i>
+            </a> <!--github -->
+            <a href="https://github.com/kaadjal" target="_blank" rel="noopener noreferrer"
+                class="text-blue-300 hover:text-white transition duration-300 ease-in-out text-4xl">
+                <i class="fab fa-github"></i>
+            </a> <!--wellfound-->
+            <a href="https://wellfound.com/u/yourprofile" target="_blank" rel="noopener noreferrer"
+                class="text-blue-300 hover:text-white transition duration-300 ease-in-out text-4xl">
+                <i class="fab fa-angellist"></i>
+            </a>
+            <!-- Add more social links as needed -->
+            <a href="mailto:youremail@example.com"
+                class="text-blue-300 hover:text-white transition duration-300 ease-in-out text-4xl">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
-        <h3 class="skill-title">Key Skills:</h3>
-        <ul class="skill-list">
-            <li>HTML5 & CSS3</li>
-            <li>PowerBI</li>
-            <li>Tableau</li>
-            <li>Microsoft Offce</li>
-            <li>Git & GitHub</li>
-        </ul>
     </div>
 
-    <div class="sidebar-footer-text-container">
-        <p class="sidebar-footer-text">Always learning, always thinking.</p>
+    <!-- Skills Highlight -->
+    <div class="mb-8 text-center">
+        <h3 class="text-2xl font-semibold text-blue-100 mb-4">My Skills</h3>
+        <div class="flex flex-wrap justify-center gap-2">
+            <span class="bg-blue-700 text-blue-100 px-4 py-2 rounded-full text-md font-medium shadow-md">PowerBI</span>
+            <span class="bg-blue-700 text-blue-100 px-4 py-2 rounded-full text-md font-medium shadow-md">SQL</span>
+            <span class="bg-blue-700 text-blue-100 px-4 py-2 rounded-full text-md font-medium shadow-md">Python</span>
+            <span class="bg-blue-700 text-blue-100 px-4 py-2 rounded-full text-md font-medium shadow-md">Git & GitHub</span>
+            <span class="bg-blue-700 text-blue-100 px-4 py-2 rounded-full text-md font-medium shadow-md">Cloud</span>
+            <span class="bg-blue-700 text-blue-100 px-4 py-2 rounded-full text-md font-medium shadow-md">Tableau</span>
+            <span class="bg-blue-700 text-blue-100 px-4 py-2 rounded-full text-md font-medium shadow-md">Microsoft Office</span>
+            <!-- Add more skills -->
+        </div>
+    </div>
+
+    <!-- Other Image Banner -->
+    <div class="text-center mt-8">
+        <!-- This image will now explicitly ensure it takes full width of its container (the sidebar) -->
+        <!-- and maintain its aspect ratio, even if you upload a very high-resolution image. -->
+        <!-- max-w-full is added for explicit clarity, though w-full already implies this. -->
+        <img src="https://placehold.co/250x150/3B82F6/FFFFFF?text=Cool+Banner" alt="Cool Banner"
+            class="w-full h-auto max-w-full rounded-lg shadow-xl border-2 border-blue-400">
     </div>
 </aside>
+
+
