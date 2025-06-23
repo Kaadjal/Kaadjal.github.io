@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
         rightBannerImageUrl: "photo.png", // URL for the small image banner background
         copyrightText: "© 2025 Kaadjal. All rights reserved.", // Footer copyright text
         socialMedia: {
-            linkedin: "https://www.linkedin.com/in/tanuja-ramsaransing", // Replace with your LinkedIn URL
-            wellfound: "https://wellfound.com/u/yourprofile",   // Replace with your Wellfound (AngelList) URL
+            linkedin: "https://www.linkedin.com/in/tanuja-ramsaransing-30536b138/", // Replace with your LinkedIn URL
+            wellfound: "https://wellfound.com/u/tanuja-ramsaransing",   // Replace with your Wellfound (AngelList) URL
             github: "https://github.com/kaadjal",         // Replace with your GitHub URL
+            microsoft: "https://learn.microsoft.com/en-us/users/tanujaramsaransing/",
             // Add more social links here (e.g., twitter: "https://twitter.com/yourhandle")
         },
         skills: [
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'linkedin': iconClass = 'fab fa-linkedin'; break;
                 case 'wellfound': iconClass = 'fab fa-angellist'; break; // Font Awesome icon for AngelList (Wellfound)
                 case 'github': iconClass = 'fab fa-github'; break;
+                case 'microsoft': iconClass = 'fab fa-microsoft'; break;    
                 // Add more cases for other platforms as needed
                 default: iconClass = 'fas fa-link'; // Default generic link icon
             }
