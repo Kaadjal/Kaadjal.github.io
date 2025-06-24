@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `).join('');
 
         return `
-            <aside class="right-banner bg-steel-blue shadow-lg rounded-tl-xl rounded-bl-xl p-6 hidden lg:flex flex-col items-center">
+            <aside class="right-banner bg-light-sky-blue shadow-lg rounded-tl-xl rounded-bl-xl p-6 hidden lg:flex flex-col items-center">
                 <img src="${config.profilePicUrl}" alt="Your Profile Picture" class="profile-pic mb-6 shadow-md">
                 <h2 class="text-2xl font-bold text-dark-blue mb-4">Kaadjal</h2>
                 <p class="text-gray-700 text-sm mb-6">
