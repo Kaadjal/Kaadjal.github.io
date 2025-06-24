@@ -207,6 +207,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- Make Tags Clickable for Search ---
+    const tags = document.querySelectorAll('.tags-container span');
+    tags.forEach(tag => {
+        tag.style.cursor = 'pointer'; // Indicate it's clickable
+        tag.addEventListener('click', function() {
+            searchInput.value = this.textContent.trim(); // Set search input to tag text
+            performSearch(); // Perform search
+        });
+    });
+
     // --- Image Resize Functionality (for large blog/project images) ---
     function setupResponsiveImages() {
         document.querySelectorAll('.main-content-wrapper img.large-image').forEach(img => {
