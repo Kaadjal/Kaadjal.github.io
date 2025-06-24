@@ -38,7 +38,7 @@ body {
 
 /* --- Fixed Top Banner (Header) --- */
 .top-banner {
-    background-image: url('assets/images/header-bg.jpg'); /* Your header background image */
+    background-image: url('banner.png'); /* Your header background image */
     background-size: cover;
     background-position: center;
     position: fixed;
