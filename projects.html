@@ -3,53 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Kaadjal</title>
-    <link href="style.css" rel="stylesheet">
+    <title>Kaadjal - Projects</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Configure Tailwind to use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Padding for fixed banners (top, right, bottom) */
+            padding-top: 80px; /* Height of the top banner */
+            padding-right: 320px; /* Width of the right banner */
+            padding-bottom: 80px; /* Height of the footer */
+            background-color: #f0f8ff; /* Lightest blue for overall background */
+        }
+        /* Override Tailwind's default scroll behavior if necessary for fixed elements */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom colors for Tailwind */
+        :root {
+            --color-dark-blue: #00008b; /* Dark Blue */
+            --color-light-blue: #add8e6; /* Light Blue */
+            --color-sky-blue: #87ceeb; /* Sky Blue */
+            --color-cornflower-blue: #6495ed; /* Cornflower Blue */
+        }
+    </style>
 </head>
-<body class="font-sans">
+<body class="bg-blue-50">
+    <!-- Placeholder for the Top Banner - Injected by script.js -->
+    <div id="top-banner-placeholder"></div>
 
-    <div id="header-placeholder"></div>
-    <div id="sidebar-placeholder"></div>
+    <!-- Placeholder for the Right-Side Banner - Injected by script.js -->
+    <div id="right-banner-placeholder"></div>
 
-    <main class="main-content">
-        <h1 class="text-4xl font-extrabold text-white mb-8">Data Projects</h1>
+    <!-- Main Content Area -->
+    <div class="main-content-wrapper flex justify-center py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl w-full">
+            <h1 class="text-4xl font-bold text-dark-blue mb-8 text-center">My Projects</h1>
 
-        <section class="blog-post bg-royalblue">
-            <h2 class="text-3xl font-semibold text-lightskyblue mb-4">Project Alpha: Predictive Analytics Dashboard</h2>
-            <p class="text-sm text-gray-300 mb-4">Technologies: Python, Pandas, Scikit-learn, Dash, SQL</p>
-            <p class="mb-4">
-                Developed a real-time interactive dashboard to predict customer churn for an e-commerce platform.
-                The project involved extensive data cleaning, feature engineering, and training a Gradient Boosting Classifier.
-            </p>
-            <img src="assets/images/project-alpha.jpg" alt="Predictive Analytics Dashboard" class="responsive-img my-4">
-            <p>
-                Key outcomes included a 15% reduction in churn rate due to proactive interventions suggested by the model.
-                The dashboard provided business users with insights into churn drivers and at-risk customer segments.
-            </p>
-            <a href="https://github.com/yourusername/project-alpha" target="_blank" class="text-lightskyblue hover:underline flex items-center">
-                <i class="fab fa-github mr-2"></i> View on GitHub
-            </a>
-        </section>
+            <!-- Example Project 1 -->
+            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
+                <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">Project Alpha: Interactive Dashboard</h2>
+                <img src="https://placehold.co/800x450/87CEEB/FFFFFF?text=Project+Alpha" alt="Project Alpha Image" class="w-full h-auto rounded-lg mb-6 max-w-full large-image">
+                <p class="text-gray-800 leading-relaxed text-center mb-4">
+                    Developed an interactive dashboard application using React.js and D3.js for data visualization. This project focuses on presenting complex datasets in an intuitive and visually appealing manner.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" target="_blank" class="px-4 py-2 bg-dark-blue text-white rounded-lg hover:bg-sky-blue transition duration-300">View Demo</a>
+                    <a href="#" target="_blank" class="px-4 py-2 bg-gray-200 text-dark-blue rounded-lg hover:bg-gray-300 transition duration-300">GitHub Repo</a>
+                </div>
+            </article>
 
-        <section class="blog-post bg-dodgerblue">
-            <h2 class="text-3xl font-semibold text-lightskyblue mb-4">Project Beta: NLP for Sentiment Analysis</h2>
-            <p class="text-sm text-gray-300 mb-4">Technologies: Python, NLTK, spaCy, TensorFlow/Keras</p>
-            <p class="mb-4">
-                Built a natural language processing pipeline to perform sentiment analysis on social media data related to product reviews.
-                Utilized various NLP techniques including tokenization, lemmatization, and embedding models.
-            </p>
-            <p>
-                The model achieved an accuracy of 88% in classifying sentiment as positive, negative, or neutral, providing valuable feedback for product development.
-            </p>
-            <a href="https://github.com/yourusername/project-beta" target="_blank" class="text-lightskyblue hover:underline flex items-center">
-                <i class="fab fa-github mr-2"></i> View on GitHub
-            </a>
-        </section>
+            <!-- Example Project 2 -->
+            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
+                <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">Project Beta: E-commerce Backend API</h2>
+                <img src="https://placehold.co/800x450/ADD8E6/00008B?text=Project+Beta" alt="Project Beta Image" class="w-full h-auto rounded-lg mb-6 max-w-full large-image">
+                <p class="text-gray-800 leading-relaxed text-center mb-4">
+                    Built a robust e-commerce backend API using Node.js, Express, and MongoDB. Implemented features such as user authentication, product management, order processing, and payment integration.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" target="_blank" class="px-4 py-2 bg-dark-blue text-white rounded-lg hover:bg-sky-blue transition duration-300">View Docs</a>
+                    <a href="#" target="_blank" class="px-4 py-2 bg-gray-200 text-dark-blue rounded-lg hover:bg-gray-300 transition duration-300">GitHub Repo</a>
+                </div>
+            </article>
 
-        </main>
+            <!-- Add more projects here following the same structure -->
 
+        </div>
+    </div>
+
+    <!-- Placeholder for the Footer - Injected by script.js -->
     <div id="footer-placeholder"></div>
-    <script src="main.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
