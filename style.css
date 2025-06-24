@@ -195,7 +195,7 @@ body {
     padding-top: 80px; /* Only top banner height */
     padding-right: 320px; /* Width of the right banner */
     padding-bottom: 80px; /* Space for the footer (approx height) */
-    background-color: var(--color-light-sky-blue); /* Body background color */
+    background-color: white; /* Body background color */
     box-sizing: border-box;
     min-height: 100vh; /* Ensure body takes at least full viewport height */
     position: relative; /* Needed for calc() to work correctly on main content */
