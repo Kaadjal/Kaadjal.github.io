@@ -197,7 +197,7 @@
 }
 
 .footer .social-links a {
-    color: white;
+    color: var(--color-royal-blue);
     font-size: 1.2rem;
     margin: 0 10px; /* Spacing between social icons */
     transition: color 0.3s ease-in-out;
