@@ -4,44 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaadjal</title>
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for 'Inter' -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define custom colors for Tailwind to use */
+        :root {
+            --color-cornflowerblue: #6495ED;
+            --color-royalblue: #4169E1;
+            --color-dodgerblue: #1E90FF;
+            --color-lightskyblue: #87CEFA;
+            --color-navy: #000080;
+        }
+
+        /* Extend Tailwind's theme with custom colors */
+        .bg-cornflowerblue { background-color: var(--color-cornflowerblue); }
+        .text-cornflowerblue { color: var(--color-cornflowerblue); }
+        .bg-royalblue { background-color: var(--color-royalblue); }
+        .text-royalblue { color: var(--color-royalblue); }
+        .bg-dodgerblue { background-color: var(--color-dodgerblue); }
+        .text-dodgerblue { color: var(--color-dodgerblue); }
+        .bg-lightskyblue { background-color: var(--color-lightskyblue); }
+        .text-lightskyblue { color: var(--color-lightskyblue); }
+        .bg-navy { background-color: var(--color-navy); }
+        .text-navy { color: var(--color-navy); }
+        .border-navy { border-color: var(--color-navy); }
+    </style>
 </head>
-<body class="font-inter bg-blue-50">
-    <!-- Placeholder for Top Banner (will be injected by script.js) -->
+<body class="bg-lightskyblue font-inter">
+    <!-- Placeholder for the fixed top banner -->
     <div id="top-banner-placeholder"></div>
 
-    <div class="flex flex-col md:flex-row relative z-0 mt-20"> <!-- mt-20 to clear fixed top banner -->
-        <!-- Main Content Area - Blog Posts -->
-        <main class="flex-1 p-4 md:p-8 md:ml-[256px] lg:ml-[320px] pb-20"> <!-- pb-20 for footer clear -->
-            <section class="blog-posts grid gap-8">
-                <h2 class="text-3xl font-bold text-navy-800 mb-6">Latest Blog Posts</h2>
+    <!-- Placeholder for the fixed right-side banner -->
+    <div id="right-banner-placeholder"></div>
 
-                <!-- Blog posts will be dynamically injected here by script.js -->
-                <div id="blog-posts-container" class="grid gap-8">
-                    <!-- Posts will be loaded here -->
+    <!-- Main Content Area -->
+    <main class="main-content-area min-h-screen p-4 md:p-8">
+        <section class="max-w-3xl mx-auto bg-white rounded-lg shadow-xl p-6 md:p-8 mt-24 mb-24">
+            <h1 class="text-3xl md:text-4xl font-bold text-navy mb-6 text-center">Welcome to My Blog!</h1>
+
+            <!-- Blog Post 1 -->
+            <article class="mb-10 pb-6 border-b border-gray-200">
+                <h2 class="text-2xl md:text-3xl font-semibold text-royalblue mb-3">My First Blog Post: Getting Started</h2>
+                <p class="text-gray-600 text-sm mb-4">Published on: July 24, 2024</p>
+                <p class="text-gray-800 leading-relaxed mb-4">
+                    Welcome to my personal blog! This is where I'll be sharing my thoughts, experiences, and insights on various topics. From coding adventures to life reflections, expect a mix of content that I hope you'll find interesting and engaging.
+                </p>
+                <img src="https://placehold.co/800x450/6495ED/FFFFFF?text=Blog+Image+1" alt="Blog Image 1" class="w-full h-auto rounded-lg mb-4 shadow-md">
+                <p class="text-gray-800 leading-relaxed">
+                    Setting up this blog has been an exciting journey, combining my passion for web development with my desire to share knowledge. Stay tuned for more posts!
+                </p>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="mb-10 pb-6 border-b border-gray-200">
+                <h2 class="text-2xl md:text-3xl font-semibold text-royalblue mb-3">Exploring New Technologies</h2>
+                <p class="text-gray-600 text-sm mb-4">Published on: July 20, 2024</p>
+                <div class="relative mb-4 pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-md">
+                    <!-- 16:9 Aspect Ratio for Video -->
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=fXWf_hY2QYp_1cE2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+                <p class="text-gray-800 leading-relaxed mb-4">
+                    In my latest endeavor, I've been diving deep into the world of artificial intelligence and machine learning. The possibilities are truly endless, and I'm excited to share some of my findings and projects in upcoming posts.
+                </p>
+                <p class="text-gray-800 leading-relaxed">
+                    Learning new technologies is a continuous process, and I believe in sharing the journey. From setting up environments to debugging complex algorithms, every step is a learning opportunity.
+                </p>
+            </article>
 
-                <!-- Pagination Controls -->
-                <nav id="pagination-controls" class="flex justify-center items-center mt-8 space-x-4">
-                    <button id="prev-page-btn" class="bg-dodgerblue-600 text-white px-6 py-3 rounded-xl shadow-md hover:bg-lightskyblue-400 hover:text-navy-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium">Previous</button>
-                    <span id="page-info" class="text-lg font-medium text-navy-800">Page 1 of X</span>
-                    <button id="next-page-btn" class="bg-dodgerblue-600 text-white px-6 py-3 rounded-xl shadow-md hover:bg-lightskyblue-400 hover:text-navy-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium">Next</button>
-                </nav>
-            </section>
-        </main>
+            <!-- Blog Post 3 (Example with GIF) -->
+            <article class="mb-10 pb-6 border-b border-gray-200">
+                <h2 class="text-2xl md:text-3xl font-semibold text-royalblue mb-3">A Glimpse into My Workflow</h2>
+                <p class="text-gray-600 text-sm mb-4">Published on: July 15, 2024</p>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcXlmdW44am9zb2R5dGNzcmJpZGZtM2Qxd2N1ZXl0c3V2djgzMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L8r7W0sNfF0xM0yUaP/giphy.gif" alt="Workflow GIF" class="w-full h-auto rounded-lg mb-4 shadow-md">
+                <p class="text-gray-800 leading-relaxed">
+                    Here's a little peek into my typical development workflow. I often find myself juggling multiple tasks, from design mockups to backend logic. Efficiency is key!
+                </p>
+                <p class="text-gray-800 leading-relaxed">
+                    Tools and techniques are always evolving, and adapting to new ways of working is part of the fun. I'll share my favorite tools and productivity hacks soon!
+                </p>
+            </article>
 
-        <!-- Placeholder for Right-Side Banner (will be injected by script.js) -->
-        <div id="right-banner-placeholder"></div>
-    </div>
+            <!-- You can add more blog posts here following the same structure -->
 
-    <!-- Placeholder for Footer (will be injected by script.js) -->
+        </section>
+    </main>
+
+    <!-- Placeholder for the fixed footer -->
     <div id="footer-placeholder"></div>
 
     <!-- Custom JavaScript -->
