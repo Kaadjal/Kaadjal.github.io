@@ -6,7 +6,7 @@ body {
     /* Adjust these values if banner heights/widths change */
     padding-top: 4rem; /* For the fixed header */
     padding-right: 16rem; /* For the fixed right sidebar */
-    padding-bottom: 6rem; /* For the fixed footer (approximate height, adjusted for content) */
+    padding-bottom: 8rem; /* Adjusted for fixed footer (min-height 6rem + 2rem padding) */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     min-height: 100vh; /* Ensure body takes at least full viewport height */
     position: relative; /* Needed for footer positioning */
@@ -17,6 +17,7 @@ body {
     margin-left: auto; /* Center the content */
     margin-right: 16rem; /* Space for the right sidebar */
     max-width: calc(100% - 16rem); /* Adjust max-width to account for sidebar */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Adjustments for smaller screens (mobile) */
@@ -72,8 +73,9 @@ body {
     top: 4rem; /* Below the top banner */
     right: 0;
     width: 16rem; /* Fixed width for the sidebar */
-    height: calc(100vh - 4rem - 6rem); /* Height: viewport - header - footer (approx) */
-    overflow-y: hidden; /* No scroll on right sidebar */
+    /* Set max-height to ensure it doesn't go below the viewport minus header and a small buffer */
+    max-height: calc(100vh - 4rem - 1rem); /* Height: viewport - header - small buffer from bottom */
+    overflow-y: hidden; /* No scroll on right sidebar as requested */
     z-index: 999; /* Below header, above main content */
     background-color: var(--color-cornflowerblue);
 }
@@ -104,14 +106,14 @@ body {
     left: 0;
     width: 100%;
     height: auto; /* Height adapts to content */
-    min-height: 6rem; /* Minimum height for the footer */
+    min-height: 6rem; /* Minimum height for the footer content area */
     background-color: var(--color-navy);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0; /* Space above and below text */
+    padding: 1rem 0; /* Space above and below text for total 8rem height approx */
     box-sizing: border-box;
     z-index: 1000; /* Ensure it stays on top */
     transform: translateY(100%); /* Initially hidden below viewport */
