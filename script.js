@@ -51,21 +51,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'linkedin': iconClass = 'fab fa-linkedin'; break;
                 case 'wellfound': iconClass = 'fab fa-angellist'; break; // Font Awesome icon for AngelList (Wellfound)
                 case 'github': iconClass = 'fab fa-github'; break;
-                case 'microsoft': iconClass = 'fab fa-microsoft'; break;
                 // Add more cases for other platforms as needed
                 default: iconClass = 'fas fa-link'; // Default generic link icon
             }
             return `<a href="${url}" target="_blank" class="text-navy hover:text-royal-blue transition duration-300"><i class="${iconClass}"></i></a>`;
         }).join('');
 
-      const skillsHTML = config.skills.map(skill => `
+        const skillsHTML = config.skills.map(skill => `
             <span class="inline-block bg-cornflower-blue text-white text-xs px-3 py-1 rounded-full mr-2 mb-2 shadow-sm">${skill}</span>
         `).join('');
 
         return `
             <aside class="right-banner bg-light-sky-blue shadow-lg rounded-tl-xl rounded-bl-xl p-6 hidden lg:flex flex-col items-center">
                 <img src="${config.profilePicUrl}" alt="Your Profile Picture" class="profile-pic mb-6 shadow-md">
-                <h2 class="text-2xl font-bold text-navy mb-2">Kaadjal</h2>
+                <h2 class="text-2xl font-bold text-navy mb-2">Hello!</h2>
                 <p class="text-gray-700 text-sm mb-6">
                     ${config.rightBannerDescription}
                 </p>
@@ -107,11 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'linkedin': iconClass = 'fab fa-linkedin'; break;
                 case 'wellfound': iconClass = 'fab fa-angellist'; break;
                 case 'github': iconClass = 'fab fa-github'; break;
-                case 'microsoft': iconClass = 'fab fa-microsoft'; break;
                 default: iconClass = 'fas fa-link';
             }
             return `<a href="${url}" target="_blank" class="hover:text-dodger-blue transition duration-300"><i class="${iconClass}"></i></a>`;
         }).join('');
+
         return `
             <footer class="footer bg-navy text-white shadow-lg">
                 <div class="footer-nav-row">
@@ -171,6 +170,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Trigger scroll event once on load to check initial position (for short pages)
         window.dispatchEvent(new Event('scroll'));
+    }
+
+    // --- Search Functionality ---
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const blogPostsContainer = document.getElementById('blog-posts-container');
+    const blogPosts = blogPostsContainer ? blogPostsContainer.querySelectorAll('.blog-post') : [];
+
+    function performSearch() {
+        const query = searchInput.value.toLowerCase().trim();
+
+        blogPosts.forEach(post => {
+            const title = post.querySelector('h2').textContent.toLowerCase();
+            const content = post.querySelector('p').textContent.toLowerCase();
+            const keywords = post.dataset.keywords ? post.dataset.keywords.toLowerCase() : '';
+
+            // Check if query is in title, content, or keywords
+            if (query === '' || title.includes(query) || content.includes(query) || keywords.includes(query)) {
+                post.style.display = 'flex'; // Show the post
+            } else {
+                post.style.display = 'none'; // Hide the post
+            }
+        });
+    }
+
+    // Attach event listeners for search
+    if (searchButton) {
+        searchButton.addEventListener('click', performSearch);
+    }
+    if (searchInput) {
+        searchInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
     }
 
     // --- Image Resize Functionality (for large blog/project images) ---
