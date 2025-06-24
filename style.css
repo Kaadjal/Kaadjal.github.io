@@ -170,7 +170,7 @@
 .footer {
     /* Removed position: fixed, bottom, left, width, height */
     /* Removed opacity, pointer-events, transition */
-    background-color: var(--color-navy);
+    background-color: var(--color-cornflower-blue);
     color: white;
     display: flex;
     flex-direction: column; /* Keep as column to stack copyright and the links row */
