@@ -145,7 +145,7 @@
     max-height: calc(100vh - 80px); /* Max height to fit within viewport below top banner */
     overflow-y: hidden; /* Ensure no scrollbar appears */
     z-index: 40; /* Ensure it's above main content but potentially below top banner */
-    background-color: var(--color-light-sky-blue); 
+    background-color: var(--color-cornflower-blue); 
     padding: 20px;
     box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 1rem;
@@ -208,7 +208,7 @@
 }
 
 .footer .about-link a {
-    color: var(--color-light-sky-blue);
+    color: var(--color-navy);
     font-size: 0.8rem;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
@@ -286,7 +286,7 @@ body {
 
 /* Style for social icons in the right banner */
 .right-banner .social-icons a {
-    color: var(--color-dark-blue);
+    color: var(--color-navy);
     font-size: 1.8rem;
     margin: 0 0.75rem;
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
