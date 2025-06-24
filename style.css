@@ -7,7 +7,6 @@
     --color-dodger-blue: #1E90FF; /* Bright blue, good for primary buttons */
     --color-cornflower-blue: #6495ED; /* Mid-light blue, for navigation, text highlights */
     --color-light-sky-blue: #87CEFA; /* Lightest blue, for backgrounds and light elements */
-    --color-white: #ffffff; white
 }
 
 /* Re-map existing text/background utility classes to new variables */
@@ -107,7 +106,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%; /* Changed to span full width */
+    width: 100%; /* Spans full width */
     height: auto; /* Height adapts to content */
     min-height: 80px; /* Minimum height */
     z-index: 50;
@@ -123,14 +122,6 @@
     opacity: 0;
     pointer-events: none; /* Prevents interaction when hidden */
     transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
-}
-
-/* Adjust footer width for smaller screens when right banner is hidden */
-/* This media query is now effectively redundant since width is 100% always, but harmless */
-@media (max-width: 1024px) {
-    .footer {
-        width: 100%; /* Full width when right banner is hidden */
-    }
 }
 
 .footer .copyright-text {
@@ -150,7 +141,10 @@
     margin-bottom: 5px; /* Space below this row */
 }
 
-.footer .footer-nav-row a {
+.footer .footer-nav-link { /* Specific class for footer nav links */
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between icon and text */
     color: white;
     font-size: 0.9rem;
     margin: 0 8px; /* Spacing between nav links */
@@ -159,9 +153,15 @@
     white-space: nowrap; /* Prevent text wrapping within links */
 }
 
-.footer .footer-nav-row a:hover {
+.footer .footer-nav-link:hover {
     color: var(--color-royal-blue);
     text-decoration: underline;
+}
+
+.footer .footer-nav-link svg { /* Style for SVG icons within footer nav links */
+    width: 16px; /* Icon size */
+    height: 16px;
+    fill: white; /* Icon color */
 }
 
 /* Footer row for socials and copyright */
@@ -195,19 +195,23 @@ body {
     padding-top: 80px; /* Only top banner height */
     padding-right: 320px; /* Width of the right banner */
     padding-bottom: 80px; /* Space for the footer (approx height) */
-    background-color: var(--color-white);
+    background-color: var(--color-light-sky-blue); /* Body background color */
     box-sizing: border-box;
     min-height: 100vh; /* Ensure body takes at least full viewport height */
     position: relative; /* Needed for calc() to work correctly on main content */
 }
+
 .main-content-wrapper {
-    margin-left: auto;
-    margin-right: auto;
+    background-color: white; /* Set main content area background to white */
+    padding: 2rem; /* Add padding inside the white area */
+    border-radius: 1rem; /* Rounded corners for the white area */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for definition */
+    margin: 2rem auto; /* Center the white content area with top/bottom margin */
     max-width: 100%;
     box-sizing: border-box;
+    /* Adjust padding-left/right to ensure it doesn't push into right banner too much */
     padding-left: 1rem;
     padding-right: 1rem;
-    margin-top: 0;
 }
 
 @media (min-width: 1024px) {
@@ -234,13 +238,13 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling for buttons in the right banner - removed nav-buttons from here */
+/* Styling for buttons in the right banner */
 .right-banner-button {
     width: 180px; /* Fixed width for alignment */
     height: 50px; /* Fixed height for alignment */
     padding: 0.75rem 1.5rem;
     margin-bottom: 0.5rem; /* Small space between buttons */
-    background-color: var(--color-dodger-blue);
+    background-color: var(--color-dodger-blue); /* Fallback background color */
     color: white;
     font-weight: 600;
     border-radius: 0.5rem;
@@ -251,10 +255,41 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px; /* Space between icon and text */
+
+    /* Background image properties */
+    background-size: cover; /* Cover the entire button area */
+    background-position: center; /* Center the background image */
+    position: relative; /* Needed for pseudo-element overlay */
+    overflow: hidden; /* Hide any overflowing background image */
 }
 
+/* Overlay for text readability on right-banner buttons */
+.right-banner-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 128, 0.3); /* Navy with 30% opacity */
+    border-radius: 0.5rem;
+    z-index: 1; /* Place overlay behind content but above background image */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.right-banner-button:hover::before {
+    background-color: rgba(65, 105, 225, 0.4); /* RoyalBlue with 40% opacity on hover */
+}
+
+.right-banner-button svg,
+.right-banner-button span { /* Ensure icon and text are above the overlay */
+    position: relative;
+    z-index: 2;
+}
+
+
 .right-banner-button:hover {
-    background-color: var(--color-royal-blue);
+    /* Background color on hover is handled by the :before pseudo-element */
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
