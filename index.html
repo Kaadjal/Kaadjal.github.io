@@ -4,107 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaadjal</title>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Custom Styles -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Configure Tailwind to use Inter font -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            /* Padding for fixed banners (top, right, bottom) */
-            padding-top: 80px; /* Height of the top banner */
-            padding-right: 320px; /* Width of the right banner */
-            padding-bottom: 80px; /* Height of the footer */
-            background-color: #f0f8ff; /* Lightest blue for overall background */
-        }
-        /* Override Tailwind's default scroll behavior if necessary for fixed elements */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Custom colors for Tailwind */
-        :root {
-            --color-dark-blue: #00008b; /* Dark Blue */
-            --color-light-blue: #add8e6; /* Light Blue */
-            --color-sky-blue: #87ceeb; /* Sky Blue */
-            --color-cornflower-blue: #6495ed; /* Cornflower Blue */
-        }
-    </style>
+    <!-- Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-blue-50">
-    <!-- Placeholder for the Top Banner - Injected by script.js -->
+<body class="font-inter bg-blue-50">
+    <!-- Placeholder for Top Banner (will be injected by script.js) -->
     <div id="top-banner-placeholder"></div>
 
-    <!-- NEW: Placeholder for the Navigation Bar - Injected by script.js -->
-    <div id="nav-bar-placeholder"></div>
+    <div class="flex flex-col md:flex-row relative z-0 mt-20"> <!-- mt-20 to clear fixed top banner -->
+        <!-- Main Content Area - Blog Posts -->
+        <main class="flex-1 p-4 md:p-8 md:ml-[256px] lg:ml-[320px] pb-20"> <!-- pb-20 for footer clear -->
+            <section class="blog-posts grid gap-8">
+                <h2 class="text-3xl font-bold text-navy-800 mb-6">Latest Blog Posts</h2>
 
-    <!-- Placeholder for the Right-Side Banner - Injected by script.js -->
-    <div id="right-banner-placeholder"></div>
-
-    <!-- Main Content Area -->
-    <div class="main-content-wrapper flex justify-center py-8 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl w-full">
-            <h1 class="text-4xl font-bold text-dark-blue mb-8 text-center">Blog Posts</h1>
-
-            <!-- Example Blog Post 1 -->
-            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
-                <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">My First Blog Post: Exploring Web Development</h2>
-                <p class="text-gray-700 text-lg mb-4 text-center">Date: June 23, 2025</p>
-                <img src="https://placehold.co/800x450/6495ED/FFFFFF?text=WebDev+Blog" alt="Web Development Blog Image" class="w-full h-auto rounded-lg mb-6 max-w-full large-image">
-                <p class="text-gray-800 leading-relaxed text-center">
-                    Welcome to my first blog post! In this entry, I'll share some insights into my journey in web development, the challenges I've faced, and the exciting technologies I'm currently exploring.
-                    Web development is a vast and ever-evolving field. From front-end frameworks like React and Vue to back-end technologies such as Node.js and Python with Django, there's always something new to learn.
-                </p>
-                <div class="mt-4 text-center">
-                    <p class="text-gray-800 leading-relaxed">
-                        I'm particularly fascinated by responsive design and how to create seamless user experiences across various devices. The principles of mobile-first development have become crucial in today's digital landscape.
-                        Stay tuned for more updates on my projects and learning experiences!
-                    </p>
+                <!-- Blog posts will be dynamically injected here by script.js -->
+                <div id="blog-posts-container" class="grid gap-8">
+                    <!-- Posts will be loaded here -->
                 </div>
-            </article>
 
-            <!-- Example Blog Post 2 -->
-            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
-                <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">Understanding Data Structures</h2>
-                <p class="text-gray-700 text-lg mb-4 text-center">Date: June 15, 2025</p>
-                <iframe class="w-full h-96 rounded-lg mb-6 max-w-full" src="https://www.youtube.com/embed/RBSGSUgm4nU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="text-gray-800 leading-relaxed text-center">
-                    Data structures are fundamental to computer science and programming. They provide a way to store and organize data efficiently.
-                    Understanding concepts like arrays, linked lists, trees, and graphs is essential for writing optimized and scalable code.
-                </p>
-                <div class="mt-4 text-center">
-                    <p class="text-gray-800 leading-relaxed">
-                        This post delves into some common data structures and their applications, offering a beginner-friendly guide to these core concepts.
-                        The video above provides a great visual explanation of how some of these structures work.
-                    </p>
-                </div>
-            </article>
+                <!-- Pagination Controls -->
+                <nav id="pagination-controls" class="flex justify-center items-center mt-8 space-x-4">
+                    <button id="prev-page-btn" class="bg-dodgerblue-600 text-white px-6 py-3 rounded-xl shadow-md hover:bg-lightskyblue-400 hover:text-navy-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium">Previous</button>
+                    <span id="page-info" class="text-lg font-medium text-navy-800">Page 1 of X</span>
+                    <button id="next-page-btn" class="bg-dodgerblue-600 text-white px-6 py-3 rounded-xl shadow-md hover:bg-lightskyblue-400 hover:text-navy-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium">Next</button>
+                </nav>
+            </section>
+        </main>
 
-            <!-- Example Blog Post 3 (with GIF) -->
-            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
-                <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">The Joy of Learning New Languages</h2>
-                <p class="text-gray-700 text-lg mb-4 text-center">Date: June 01, 2025</p>
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTlwMXNqbjVzM3B3cTR0ZHZzMzg0dnF1OWpvdXR2c3F0dXFnaTN5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LmN8Esgoi0GxO/giphy.gif" alt="Learning GIF" class="w-full h-auto rounded-lg mb-6 max-w-full large-image">
-                <p class="text-gray-800 leading-relaxed text-center">
-                    Learning a new programming language can be daunting but also incredibly rewarding. It opens up new paradigms and problem-solving approaches.
-                    Recently, I've been dabbling in Rust, and the experience has been quite insightful, especially regarding memory safety and performance.
-                </p>
-                <div class="mt-4 text-center">
-                    <p class="text-gray-800 leading-relaxed">
-                        Embrace the challenge, as each new language adds another tool to your developer toolkit.
-                    </p>
-                </div>
-            </article>
-
-            <!-- Add more blog posts here following the same structure -->
-
-        </div>
+        <!-- Placeholder for Right-Side Banner (will be injected by script.js) -->
+        <div id="right-banner-placeholder"></div>
     </div>
 
-    <!-- Placeholder for the Footer - Injected by script.js -->
+    <!-- Placeholder for Footer (will be injected by script.js) -->
     <div id="footer-placeholder"></div>
 
     <!-- Custom JavaScript -->
