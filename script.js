@@ -113,21 +113,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             return `<a href="${url}" target="_blank" class="hover:text-dodger-blue transition duration-300"><i class="${iconClass}"></i></a>`;
         }).join('');
-
         return `
             <footer class="footer bg-navy text-white shadow-lg">
                 <div class="footer-nav-row">
                     <a href="index.html" class="footer-nav-link">
-                        ${homeIcon} Home
+                        Home
                     </a>
                     <a href="projects.html" class="footer-nav-link">
-                        ${projectsIcon} Projects
+                        Projects
                     </a>
                     <a href="photography.html" class="footer-nav-link">
-                        ${photoIcon} Photography
+                        Photography
                     </a>
                     <a href="about.html" class="footer-nav-link">
-                        ${aboutIcon} About Me
+                        About Me
                     </a>
                 </div>
                 <div class="footer-social-copyright-row">
