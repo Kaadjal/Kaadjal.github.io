@@ -83,13 +83,13 @@
 /* Fixed Navigation Bar */
 .nav-bar-container {
     position: fixed;
-    top: 80px; /* Positioned right below the top banner */
+    top: 60px; /* Positioned right below the top banner */
     left: 0;
     /* Adjusted width to account for right banner */
     width: calc(100% - 300px); /* Full width minus right banner width on large screens */
-    height: 60px; /* Height of the navigation bar */
+    height: 40px; /* Height of the navigation bar */
     background-color: var(--color-cornflower-blue);
-    z-index: 45; /* Below top banner, above main content */
+    z-index: 60; /* Below top banner, above main content */
     display: flex;
     justify-content: space-evenly; /* Evenly spread buttons */
     align-items: center;
