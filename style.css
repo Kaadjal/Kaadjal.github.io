@@ -7,6 +7,7 @@
     --color-dodger-blue: #1E90FF; /* Bright blue, good for primary buttons */
     --color-cornflower-blue: #6495ED; /* Mid-light blue, for navigation, text highlights */
     --color-light-sky-blue: #87CEFA; /* Lightest blue, for backgrounds and light elements */
+    --color-white: #ffffff; white
 }
 
 /* Re-map existing text/background utility classes to new variables */
