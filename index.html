@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaadjal</title>
+    <title>YKaadjal</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome CDN for icons -->
@@ -16,38 +16,40 @@
         body {
             font-family: 'Inter', sans-serif;
             /* Padding will be set by style.css to account for all fixed elements */
-            background-color: #f0f8ff; /* Lightest blue for overall background */
+            background-color: var(--color-light-sky-blue); /* Lightest blue for overall background */
         }
         /* Override Tailwind's default scroll behavior if necessary for fixed elements */
         html {
             scroll-behavior: smooth;
         }
-        /* Custom colors for Tailwind */
-        :root {
-            --color-dark-blue: #00008b; /* Dark Blue */
-            --color-light-blue: #add8e6; /* Light Blue */
-            --color-sky-blue: #87ceeb; /* Sky Blue */
-            --color-cornflower-blue: #6495ed; /* Cornflower Blue */
-        }
+        /* Custom colors for Tailwind - defined in style.css */
     </style>
 </head>
-<body class="bg-blue-50">
+<body class="bg-light-sky-blue">
     <!-- Placeholder for the Top Banner - Injected by script.js -->
     <div id="top-banner-placeholder"></div>
-
-    <!-- NEW: Placeholder for the Navigation Bar - Injected by script.js -->
-    <!-- <div id="nav-bar-placeholder"></div> NO LONGER USED -->
 
     <!-- Placeholder for the Right-Side Banner - Injected by script.js -->
     <div id="right-banner-placeholder"></div>
 
     <!-- Main Content Area -->
-    <div class="main-content-wrapper flex justify-center py-8 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl w-full">
-            <h1 class="text-4xl font-bold text-dark-blue mb-8 text-center">Blog Posts</h1>
+    <div class="main-content-wrapper">
+        <h1 class="text-4xl font-bold text-navy mb-8 text-center">Blog Posts</h1>
 
+        <!-- Search Bar Section -->
+        <div class="search-bar-container flex justify-center mb-8">
+            <input type="text" id="search-input" placeholder="Search blog posts..."
+                   class="p-3 border border-cornflower-blue rounded-l-lg focus:outline-none focus:ring-2 focus:ring-dodger-blue flex-grow max-w-md">
+            <button id="search-button" class="bg-cornflower-blue text-white px-5 py-3 rounded-r-lg hover:bg-royal-blue transition duration-300">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </div>
+
+        <!-- Blog Posts Container -->
+        <div id="blog-posts-container">
             <!-- Example Blog Post 1 -->
-            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
+            <article class="blog-post bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center"
+                     data-keywords="web development, front-end, javascript, react, html, css, responsive design">
                 <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">My First Blog Post: Exploring Web Development</h2>
                 <p class="text-gray-700 text-lg mb-4 text-center">Date: June 23, 2025</p>
                 <img src="https://placehold.co/800x450/6495ED/FFFFFF?text=WebDev+Blog" alt="Web Development Blog Image" class="w-full h-auto rounded-lg mb-6 max-w-full large-image">
@@ -61,10 +63,16 @@
                         Stay tuned for more updates on my projects and learning experiences!
                     </p>
                 </div>
+                <div class="tags-container mt-4 flex flex-wrap justify-center gap-2">
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Web Development</span>
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">JavaScript</span>
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Responsive Design</span>
+                </div>
             </article>
 
             <!-- Example Blog Post 2 -->
-            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
+            <article class="blog-post bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center"
+                     data-keywords="data structures, algorithms, computer science, programming, arrays, linked lists, trees">
                 <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">Understanding Data Structures</h2>
                 <p class="text-gray-700 text-lg mb-4 text-center">Date: June 15, 2025</p>
                 <iframe class="w-full h-96 rounded-lg mb-6 max-w-full" src="https://www.youtube.com/embed/RBSGSUgm4nU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -78,10 +86,16 @@
                         The video above provides a great visual explanation of how some of these structures work.
                     </p>
                 </div>
+                <div class="tags-container mt-4 flex flex-wrap justify-center gap-2">
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Data Structures</span>
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Algorithms</span>
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Computer Science</span>
+                </div>
             </article>
 
             <!-- Example Blog Post 3 (with GIF) -->
-            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
+            <article class="blog-post bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center"
+                     data-keywords="programming languages, rust, learning, new technologies, coding">
                 <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">The Joy of Learning New Languages</h2>
                 <p class="text-gray-700 text-lg mb-4 text-center">Date: June 01, 2025</p>
                 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTlwMXNqbjVzM3B3cTR0ZHZzMzg0dnF1OWpvdXR2c3F0dXFnaTN5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LmN8Esgoi0GxO/giphy.gif" alt="Learning GIF" class="w-full h-auto rounded-lg mb-6 max-w-full large-image">
@@ -93,6 +107,11 @@
                     <p class="text-gray-800 leading-relaxed">
                         Embrace the challenge, as each new language adds another tool to your developer toolkit.
                     </p>
+                </div>
+                <div class="tags-container mt-4 flex flex-wrap justify-center gap-2">
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Programming Languages</span>
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Rust</span>
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Learning</span>
                 </div>
             </article>
 
