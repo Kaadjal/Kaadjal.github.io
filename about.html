@@ -3,100 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaadjal - About Me</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN for icons -->
+    <title>Kaadjal - Your Name</title>
+    <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Configure Tailwind to use Inter font -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            /* Padding for fixed banners (top, right, bottom) */
-            padding-top: 80px; /* Height of the top banner */
-            padding-right: 320px; /* Width of the right banner */
-            padding-bottom: 80px; /* Height of the footer */
-            background-color: #f0f8ff; /* Lightest blue for overall background */
-        }
-        /* Override Tailwind's default scroll behavior if necessary for fixed elements */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Custom colors for Tailwind */
-        :root {
-            --color-dark-blue: #00008b; /* Dark Blue */
-            --color-light-blue: #add8e6; /* Light Blue */
-            --color-sky-blue: #87ceeb; /* Sky Blue */
-            --color-cornflower-blue: #6495ed; /* Cornflower Blue */
-        }
-    </style>
 </head>
-<body class="bg-blue-50">
-    <!-- Placeholder for the Top Banner - Injected by script.js -->
-    <div id="top-banner-placeholder"></div>
+<body class="font-sans">
 
-    <!-- NEW: Placeholder for the Navigation Bar - Injected by script.js -->
-    <div id="nav-bar-placeholder"></div>
+    <div id="header-placeholder"></div>
+    <div id="sidebar-placeholder"></div>
 
-    <!-- Placeholder for the Right-Side Banner - Injected by script.js -->
-    <div id="right-banner-placeholder"></div>
+    <main class="main-content">
+        <h1 class="text-4xl font-extrabold text-white mb-8">About Me</h1>
 
-    <!-- Main Content Area -->
-    <div class="main-content-wrapper flex justify-center py-8 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl w-full">
-            <h1 class="text-4xl font-bold text-dark-blue mb-8 text-center">About Me</h1>
-
-            <section class="bg-white rounded-lg shadow-lg p-6 mb-8 text-center">
-                <p class="text-gray-800 leading-relaxed text-lg mb-4">
-                    Hello! I'm Kaadjal, a passionate data analyst,  with a keen interest in data science, technology, and continuous learning.
+        <section class="blog-post bg-royalblue">
+            <h2 class="text-3xl font-semibold text-lightskyblue mb-4">My Journey & Passion</h2>
+            <p class="mb-4">
+                Hello! I'm Kaadjal, a passionate data analyst,  with a keen interest in data science, technology, and continuous learning.
                     My journey into the world of programming started with quite a while ago in 2003 when I build my first website with geocities, a fansite for several movies. 
-                </p>
-                <p class="text-gray-800 leading-relaxed text-lg mb-4">
-                    I believe in creating impactful and user-friendly digital experiences. I enjoy tackling complex problems and transforming ideas into functional, elegant solutions.
-                    My skills include PowerBI, Python, SQL, Data Analysis.
-                </p>
-                <p class="text-gray-800 leading-relaxed text-lg">
-                    When I'm not coding, you can find me hiking, reading various novels, experimenting with new recipes, playing videogames/boardgames.
-                    I'm always eager to connect with fellow enthusiasts and professionals. Feel free to reach out through my social media channels!
-                </p>
-            </section>
+            </p>
+            <p class="mb-4">                                 
+                I started my career in Medicine and transitioned into data analysis by a desire for innovation & problem-solving.
+                Over the years, I've gained experience in data modelling, data visualisation, data cleaning and data analysis.
+                
+            </p>
+            <p>
+                This website serves as my digital hub – a place where I share my professional work, personal projects, and thoughts on technology,
+                creativity, and life.
+            </p>
+        </section>
 
-            <section class="bg-white rounded-lg shadow-lg p-6 mb-8 text-center">
-                <h2 class="text-3xl font-semibold text-cornflower-blue mb-4">My Journey</h2>
-                <p class="text-gray-800 leading-relaxed text-lg mb-4">
-                    I started my career in Medicine and transitioned into data analysis by a desire for innovation & problem-solving.
-                    Over the years, I've gained experience in data modelling, data visualisation, data cleaning and data analysis.
-                </p>
-                <p class="text-gray-800 leading-relaxed text-lg">
-                    I am committed to lifelong learning and constantly seek to expand my knowledge base and skill set. I'm excited about the future of technology and how I can contribute to it.
-                </p>
-            </section>
-
-            <section class="bg-white rounded-lg shadow-lg p-6 text-center">
-                <h2 class="text-3xl font-semibold text-cornflower-blue mb-4">Connect with Me</h2>
-                <div class="flex justify-center space-x-6 text-2xl">
-                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-dark-blue hover:text-sky-blue transition duration-300">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://wellfound.com/u/yourprofile" target="_blank" class="text-dark-blue hover:text-sky-blue transition duration-300">
-                        <i class="fab fa-angellist"></i> <!-- Wellfound (formerly AngelList) icon -->
-                    </a>
-                    <a href="https://github.com/kaadjal" target="_blank" class="text-dark-blue hover:text-sky-blue transition duration-300">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <!-- Add more social media links as needed -->
+        <section class="blog-post bg-dodgerblue">
+            <h2 class="text-3xl font-semibold text-lightskyblue mb-4">What I Do</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Data Science & Analytics</h3>
+                    <p>
+                        I enjoy tackling complex problems and transforming ideas into functional, elegant solutions. Whether it's crafting insightful data models, building dashboards, or capturing the perfect moment through a lens, I'm always eager to learn and innovate.
+                        <!--Specializing in **[e.g., predictive modeling, statistical analysis, data visualization]** -->. I use Python (Pandas, NumPy), PowerBI, and SQL to transform raw data into actionable insights. My goal is to make data accessible and understandable for informed decision-making.
+                    </p>
                 </div>
-            </section>
-        </div>
-    </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Photography</h3>
+                    <p>
+                        When I'm not coding, you can find me hiking, reading various novels, experimenting with new recipes, playing videogames/boardgames.
+                    Photography is my creative outlet. I particularly enjoy **[e.g., landscape, portrait, street photography]**. It allows me to observe the world from a unique perspective and share its beauty with others. You can see my work on the <a href="photography.html" class="text-lightskyblue hover:underline">Photography page</a>.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Continuous Learning</h3>
+                    <p>
+                        The tech landscape is ever-evolving, and I am committed to continuous learning. I regularly explore new tools, frameworks, and methodologies to stay at the forefront of my fields. I'm excited about the future of technology and how I can contribute to it.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Placeholder for the Footer - Injected by script.js -->
+        <section class="blog-post bg-navy text-white">
+            <h2 class="text-3xl font-semibold text-lightskyblue mb-4">Let's Connect!</h2>
+            <p class="mb-4">
+                I'm always open to collaborating on interesting projects, sharing knowledge, or just having a chat about data, tech, or photography. Feel free to connect with me on social media:
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/tanuja-ramsaransing-30536b138/" target="_blank" aria-label="LinkedIn" class="text-lightskyblue hover:text-white transition duration-300">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+                <a href="https://wellfound.com/u/tanuja-ramsaransing" target="_blank" aria-label="Wellfound" class="text-lightskyblue hover:text-white transition duration-300">
+                    <i class="fab fa-angellist fa-3x"></i>
+                </a>
+                <a href="https://github.com/kaadjal" target="_blank" aria-label="GitHub" class="text-lightskyblue hover:text-white transition duration-300">
+                    <i class="fab fa-github fa-3x"></i>
+                </a>
+                <a href="https://learn.microsoft.com/en-us/users/tanujaramsaransing/" target="_blank" aria-label="Microsoft" class="text-lightskyblue hover:text-white transition duration-300">
+                    <i class="fab fa-microsoft fa-3x"></i>
+                </a>
+                </div>
+        </section>
+    </main>
+
     <div id="footer-placeholder"></div>
-
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
