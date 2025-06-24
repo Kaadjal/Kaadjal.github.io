@@ -4,9 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
         pageName: "Tanuja Kaadjal Ramsaransing", // Name displayed in the top banner
         bannerImageUrl: "banner.png", // URL for the top banner background image
         profilePicUrl: "kaadjal.png", // URL for your profile picture in the right banner
-        rightBannerImageText: "Photography", // Text for the small image banner
-        rightBannerImageLink: "photography.html", // Link for the small image banner
-        rightBannerImageUrl: "photo.png", // URL for the small image banner background
+        rightBannerImageTextHome: "Home", // Text for the small image banner
+        rightBannerImageLinkHome: "index.html", // Link for the small home image banner
+        rightBannerImageUrlHome: "home.png", // URL for the small home image banner background
+        rightBannerImageTextProjects: "Projects", // Text for the small image banner
+        rightBannerImageLinkProjects: "projects.html", // Link for the small image banner
+        rightBannerImageUrlProjects: "projects.png", // URL for the small image banner background
+        rightBannerImageTextPhoto: "Photography", // Text for the small image banner
+        rightBannerImageLinkPhoto: "photography.html", // Link for the small image banner
+        rightBannerImageUrlPhoto: "photo.png", // URL for the small image banner background
+        rightBannerImageTextAbout: "About", // Text for the small image banner
+        rightBannerImageLinkAbout: "about.html", // Link for the small image banner
+        rightBannerImageUrlAbout: "about.png", // URL for the small image banner background
         copyrightText: "© 2025 Kaadjal. All rights reserved.", // Footer copyright text
         socialMedia: {
             linkedin: "https://www.linkedin.com/in/tanuja-ramsaransing-30536b138/", // Replace with your LinkedIn URL
@@ -31,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Generate Navigation Bar HTML ---
     // This new function creates the horizontal navigation buttons
-    function getNavBarHTML() {
+  /* function getNavBarHTML() {
         return `
             <nav class="nav-bar-container bg-cornflower-blue shadow-lg">
                 <a href="index.html" class="nav-button">Home</a>
@@ -40,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="about.html" class="nav-button">About Me</a>
             </nav>
         `;
-    }
+    } */
 
     // --- Generate Right-Side Banner HTML ---
     function getRightBannerHTML() {
@@ -80,11 +89,32 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${skillsHTML}
                     </div>
                 </div>
-                
+
                 <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
-                     style="background-image: url('${config.rightBannerImageUrl}');">
-                    <a href="${config.rightBannerImageLink}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
-                        ${config.rightBannerImageText}
+                     style="background-image: url('${config.rightBannerImageUrlHome}');">
+                    <a href="${config.rightBannerImageLinkHome}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
+                        ${config.rightBannerImageTextHome}
+                    </a>
+                </div> 
+    
+                <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
+                     style="background-image: url('${config.rightBannerImageUrlProjects}');">
+                    <a href="${config.rightBannerImageLinkProjects}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
+                        ${config.rightBannerImageTextProjects}
+                    </a>
+                </div>
+
+                <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
+                     style="background-image: url('${config.rightBannerImageUrlPhoto}');">
+                    <a href="${config.rightBannerImageLinkPhoto}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
+                        ${config.rightBannerImageTextPhoto}
+                    </a>
+                </div>
+
+                <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
+                     style="background-image: url('${config.rightBannerImageUrlAbout}');">
+                    <a href="${config.rightBannerImageLinkAbout}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
+                        ${config.rightBannerImageTextAbout}
                     </a>
                 </div>
             </aside>
@@ -111,9 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="footer-links-row flex justify-center items-center mt-2">
                     <div class="social-links flex mr-4">
                         ${socialLinksHTML}
-                    </div>
-                    <div class="about-link">
-                        <a href="about.html" class="hover:underline transition duration-300">About Me</a>
                     </div>
                 </div>
             </footer>
