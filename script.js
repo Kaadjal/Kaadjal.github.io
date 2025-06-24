@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return `
             <aside class="right-banner bg-light-sky-blue shadow-lg rounded-tl-xl rounded-bl-xl p-6 hidden lg:flex flex-col items-center">
                 <img src="${config.profilePicUrl}" alt="Your Profile Picture" class="profile-pic mb-6 shadow-md">
-                <h2 class="text-2xl font-bold text-dark-blue mb-4">Kaadjal</h2>
-                <p class="text-gray-700 text-sm mb-6">
+                <h2 class="text-2xl font-bold text-steel-blue mb-4">Kaadjal</h2>
+                <p class="text-navy text-sm mb-6">
                     Data Analyst | Data Scientist | Tech Enthousiast | Lifelong Learner
                 </p>
                 <!-- Navigation buttons removed from here -->
@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
 
                 <div class="skills-highlight w-full text-center">
-                    <h3 class="text-lg font-semibold text-dark-blue mb-3">Skills Highlight</h3>
-                    <div class="flex flex-wrap justify-center">
+                    <h3 class="text-lg font-semibold text-navy mb-3">Skills Highlight</h3>
+                    <div class="flex flex-wrap justify-center text-">
                         ${skillsHTML}
                     </div>
                 </div>
