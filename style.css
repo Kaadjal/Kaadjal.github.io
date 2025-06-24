@@ -1,57 +1,49 @@
-/* style.css */
+/* Custom CSS for fixed elements, colors, and overrides */
 
-/* Import Tailwind CSS from CDN */
-@import url("https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css");
-
-/* Define custom CSS variables for your color palette */
+/* Define custom colors using CSS variables for shades of blue */
 :root {
-    --color-cornflowerblue: #6495ED;
-    --color-royalblue: #4169E1;
-    --color-dodgerblue: #1E90FF;
-    --color-lightskyblue: #87CEFA;
-    --color-navy: #000080;
-
-    /* Define heights/widths for fixed elements */
-    --header-height: 64px;
-    --sidebar-width: 280px;
-    --footer-height: 120px; /* Approximate height for the footer */
+    --color-navy: #000080; /* Very Dark Blue, primary dark color for headers, footers */
+    --color-royal-blue: #4169E1; /* A rich, vibrant blue for accents and hovers */
+    --color-dodger-blue: #1E90FF; /* Bright blue, good for primary buttons */
+    --color-cornflower-blue: #6495ED; /* Mid-light blue, for navigation, text highlights */
+    --color-light-sky-blue: #87CEFA; /* Lightest blue, for backgrounds and light elements */
 }
 
-/* Basic body and html styling */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
+/* Re-map existing text/background utility classes to new variables */
+.text-navy { color: var(--color-navy); }
+.bg-navy { background-color: var(--color-navy); }
+.border-navy { border-color: var(--color-navy); }
 
-body {
-    /* Adjust padding to prevent fixed elements from overlapping content */
-    padding-top: var(--header-height); /* Space for fixed header */
-    padding-right: var(--sidebar-width); /* Space for fixed right sidebar */
-    /* We'll use padding-bottom on main-content to account for the footer */
-    background-color: var(--color-cornflowerblue); /* Default body background */
-    color: white; /* Default text color */
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+.text-royal-blue { color: var(--color-royal-blue); }
+.bg-royal-blue { background-color: var(--color-royal-blue); }
 
-/* --- Fixed Top Banner (Header) --- */
+.text-dodger-blue { color: var(--color-dodger-blue); }
+.bg-dodger-blue { background-color: var(--color-dodger-blue); }
+
+.text-cornflower-blue { color: var(--color-cornflower-blue); }
+.bg-cornflower-blue { background-color: var(--color-cornflower-blue); }
+
+.text-light-sky-blue { color: var(--color-light-sky-blue); }
+.bg-light-sky-blue { background-color: var(--color-light-sky-blue); }
+
+
+/* Fixed Top Banner */
 .top-banner {
-    background-image: url('banner.png'); /* Your header background image */
-    background-size: cover;
-    background-position: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height);
-    z-index: 1000; /* Ensure it's on top */
+    height: 80px;
+    z-index: 50;
+    background-color: var(--color-navy);
+    background-image: url('https://placehold.co/1920x80/000080/FFFFFF?text=Your+Banner+Image');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .top-banner::before {
@@ -61,228 +53,267 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-navy); /* Navy overlay */
-    opacity: 0.8; /* Adjust opacity of the overlay */
-    z-index: -1; /* Behind the text */
+    background-color: rgba(0, 0, 128, 0.5); /* Navy with 50% opacity */
+    z-index: 1;
 }
 
-/* --- Fixed Right-Side Banner (Sidebar) --- */
-.right-sidebar {
-    position: fixed;
-    top: var(--header-height); /* Below the header */
-    right: 0;
-    width: var(--sidebar-width);
-    /* Max height to stop when content ends, and prevent internal scroll if content fits viewport */
-    max-height: calc(100vh - var(--header-height));
-    overflow-y: auto; /* Enable internal scrolling only if content exceeds max-height */
-    z-index: 999; /* Below header, above main content */
-    background-color: var(--color-royalblue);
+.top-banner .banner-text {
+    position: relative;
+    z-index: 2;
     color: white;
-    padding: 1.5rem 1rem; /* Adjust padding */
-    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Removed Fixed Navigation Bar styles */
+
+
+/* Fixed Right-Side Banner */
+.right-banner {
+    position: fixed;
+    top: 80px; /* Below the top banner */
+    right: 0;
+    width: 300px;
+    height: auto; /* Height adapts to content */
+    max-height: calc(100vh - 80px); /* Max height to fit within viewport below top banner */
+    overflow-y: hidden; /* Ensure no scrollbar appears */
+    z-index: 40;
+    background-color: var(--color-light-sky-blue);
+    padding: 20px;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-/* Hide scrollbar for the right sidebar (for a cleaner look) */
-.right-sidebar::-webkit-scrollbar {
-    display: none;
-}
-.right-sidebar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-.sidebar-button {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Align icon and text to the left */
-    width: 100%; /* Full width within sidebar */
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.75rem; /* Space between buttons */
-    border-radius: 0.5rem;
-    background-color: var(--color-dodgerblue);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* For smaller screens, hide the right banner */
+@media (max-width: 1024px) {
+    .right-banner {
+        display: none;
+    }
+    body {
+        padding-right: 0px;
+    }
 }
 
-.sidebar-button:hover {
-    background-color: var(--color-lightskyblue);
-    transform: translateY(-1px); /* Slight lift on hover */
-}
-
-.sidebar-button img {
-    width: 28px; /* Icon size for buttons */
-    height: 28px;
-    margin-right: 0.75rem;
-    object-fit: contain; /* Maintain aspect ratio for button icons */
-    flex-shrink: 0; /* Prevent image from shrinking */
-}
-
-/* --- Fixed Footer --- */
-.page-footer {
+/* Footer (now fixed at the bottom, appears on scroll) */
+.footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% - 300px); /* Adjust width for right banner on large screens */
+    height: auto; /* Height adapts to content */
+    min-height: 80px; /* Minimum height */
+    z-index: 50;
     background-color: var(--color-navy);
     color: white;
-    padding: 1rem 0;
-    text-align: center;
-    z-index: 1000; /* Ensure it's on top, similar to header */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-    visibility: hidden; /* Hidden by default, shown by JS on scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    /* Initially hidden styles */
     opacity: 0;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    pointer-events: none; /* Prevents interaction when hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
 }
 
-.page-footer.show {
-    visibility: visible;
-    opacity: 1;
+/* Adjust footer width for smaller screens when right banner is hidden */
+@media (max-width: 1024px) {
+    .footer {
+        width: 100%; /* Full width when right banner is hidden */
+    }
 }
 
-.footer-links, .footer-socials {
+.footer .copyright-text {
+    font-size: 0.9rem;
+    margin-top: 10px; /* Space above copyright text */
+    margin-bottom: 5px; /* Space below copyright text */
+    text-align: center;
+}
+
+/* Footer row for nav links */
+.footer .footer-nav-row {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+    width: 100%;
+    margin-bottom: 5px; /* Space below this row */
 }
 
-.footer-links a,
-.footer-socials a {
+.footer .footer-nav-row a {
     color: white;
-    text-decoration: none;
-    margin: 0 0.75rem;
-    padding: 0.25rem 0;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-socials a:hover {
-    color: var(--color-lightskyblue);
-}
-
-.footer-socials .fab {
-    font-size: 1.6rem; /* Size for social media icons */
-}
-
-.footer-socials p {
-    width: 100%; /* Ensure copyright takes full width */
-    text-align: center;
-    margin-top: 0.5rem;
     font-size: 0.9rem;
+    margin: 0 8px; /* Spacing between nav links */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    white-space: nowrap; /* Prevent text wrapping within links */
 }
 
+.footer .footer-nav-row a:hover {
+    color: var(--color-royal-blue);
+    text-decoration: underline;
+}
 
-/* --- Main Content Area --- */
-.main-content {
-    /* Push main content away from fixed sidebar */
-    margin-right: var(--sidebar-width);
-    padding: 2rem; /* General padding for content */
-    /* Ensure content doesn't get hidden by footer when scrolled */
-    padding-bottom: calc(var(--footer-height) + 2rem); /* Footer height + extra padding */
-    box-sizing: border-box; /* Include padding in element's total width and height */
-    min-height: calc(100vh - var(--header-height) - 1px); /* Ensure main content pushes scrollbar */
-    background-color: var(--color-cornflowerblue); /* Background for the main content area */
+/* Footer row for socials and copyright */
+.footer .footer-social-copyright-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px; /* Space above this row */
+}
+
+.footer .social-links-footer {
+    display: flex;
+    margin-right: 15px; /* Space between social icons and copyright */
+}
+
+.footer .social-links-footer a {
     color: white;
+    font-size: 1.2rem;
+    margin: 0 8px;
+    transition: color 0.3s ease-in-out;
 }
 
-/* --- Blog Post Styling --- */
-.blog-post {
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for blog posts */
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.footer .social-links-footer a:hover {
+    color: var(--color-dodger-blue);
 }
 
-.blog-post h2 {
-    font-size: 1.875rem; /* Tailwind's text-3xl */
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: var(--color-lightskyblue);
+
+/* Main Content Area adjustments to prevent overlap */
+body {
+    padding-top: 80px; /* Only top banner height */
+    padding-right: 320px; /* Width of the right banner */
+    padding-bottom: 80px; /* Space for the footer (approx height) */
+    background-color: var(--color-light-sky-blue);
+    box-sizing: border-box;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    position: relative; /* Needed for calc() to work correctly on main content */
+}
+.main-content-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 0;
 }
 
-.blog-post p {
-    line-height: 1.6;
-    margin-bottom: 1rem;
+@media (min-width: 1024px) {
+    .main-content-wrapper {
+        padding-right: 20px; /* Small gap to right banner if it's visible */
+        max-width: calc(100% - 300px); /* Max width considering right banner */
+    }
 }
 
-.blog-post img,
-.blog-post video,
-.blog-post iframe { /* For videos/gifs */
-    max-width: 100%; /* Ensure images/videos don't overflow */
-    height: auto;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    display: block; /* Ensure they don't have extra space below */
-    object-fit: contain; /* Default for content images */
-}
-
-/* --- Responsive Image Utilities --- */
-.responsive-img {
+/* Responsive Image Handling for large images in blog posts/projects */
+.large-image {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-.profile-img {
-    width: 128px; /* w-32 */
-    height: 128px; /* h-32 */
-    border-radius: 9999px; /* rounded-full */
-    object-fit: cover; /* cover */
-    border: 4px solid var(--color-lightskyblue); /* border-4 border-lightskyblue */
+/* Profile Picture styling */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--color-royal-blue);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Responsive Adjustments (Media Queries) --- */
-@media (max-width: 1024px) { /* Adjust for smaller screens (e.g., tablets) */
-    body {
-        padding-right: 0; /* No right padding, sidebar will become full width or move */
-    }
-
-    .right-sidebar {
-        position: relative; /* Make sidebar flow with content on smaller screens */
-        width: 100%;
-        max-height: none; /* No max height, it will expand with content */
-        top: 0;
-        right: 0;
-        box-shadow: none;
-        padding-bottom: 1.5rem; /* Add some padding at the bottom */
-        border-bottom: 1px solid rgba(255,255,255,0.1); /* Separator */
-    }
-
-    .main-content {
-        margin-right: 0; /* No right margin */
-        padding-top: 1rem; /* Adjust top padding */
-    }
-
-    /* Adjust sidebar internal spacing for smaller screens */
-    .right-sidebar .flex-col {
-        align-items: center;
-    }
+/* Styling for buttons in the right banner */
+.right-banner-button {
+    width: 180px; /* Fixed width for alignment */
+    height: 50px; /* Fixed height for alignment */
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 0.5rem; /* Small space between buttons */
+    background-color: var(--color-dodger-blue);
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
 }
 
-@media (max-width: 768px) { /* Adjust for mobile screens */
-    .top-banner h1 {
-        font-size: 1.5rem; /* Smaller font size for mobile header */
-    }
+.right-banner-button:hover {
+    background-color: var(--color-royal-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-    .page-footer .footer-links,
-    .page-footer .footer-socials {
-        flex-direction: column; /* Stack links vertically */
-    }
+.right-banner-button svg {
+    width: 20px; /* Icon size */
+    height: 20px;
+    fill: white; /* Default icon color */
+}
 
-    .page-footer .footer-links a,
-    .page-footer .footer-socials a {
-        margin-bottom: 0.5rem;
-    }
+/* Style for social icons in the right banner */
+.right-banner .social-icons a {
+    color: var(--color-navy);
+    font-size: 1.8rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
 
-    .page-footer .footer-socials p {
-        margin-top: 0; /* Reduce space */
-    }
+.right-banner .social-icons a:hover {
+    color: var(--color-royal-blue);
+    transform: scale(1.1);
+}
+
+/* Style for the small image banner in the right-side banner */
+.right-banner .image-text-banner {
+    width: 100%;
+    background-color: var(--color-navy);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    background-image: url('https://placehold.co/300x100/000080/FFFFFF?text=Interesting+Fact');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-banner .image-text-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 128, 0.6); /* Navy with 60% opacity */
+    z-index: 1;
+}
+
+.right-banner .image-text-banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Text colors for blog content and titles */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-navy); /* Headings use Navy */
+}
+
+.text-cornflower-blue { /* For elements previously using this class directly */
+    color: var(--color-cornflower-blue);
 }
