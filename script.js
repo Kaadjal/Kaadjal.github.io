@@ -65,27 +65,27 @@ document.addEventListener('DOMContentLoaded', function() {
             <aside class="right-banner bg-light-sky-blue shadow-lg p-6 hidden lg:flex flex-col items-center">
                 <img src="${config.profilePicUrl}" alt="Your Profile Picture" class="profile-pic mb-6 shadow-md">
                 <h2 class="text-2xl font-bold text-navy mb-4">Kaadjal</h2>
-                <p class="text-royal-blue text-sm mb-6">
+                <p class="text-white text-sm mb-6">
                     Data Analyst | Data Scientist | Tech Enthousiast | Lifelong Learner
                 </p>
                 <!-- Navigation buttons removed from here -->
-
-                <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
-                     style="background-image: url('${config.rightBannerImageUrl}');">
-                    <a href="${config.rightBannerImageLink}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
-                        ${config.rightBannerImageText}
-                    </a>
-                </div>
-
+                
                 <div class="social-icons flex justify-center w-full mb-6 space-x-4">
                     ${socialIconsHTML}
                 </div>
 
                 <div class="skills-highlight w-full text-center">
                     <h3 class="text-lg font-semibold text-navy mb-3">Skills Highlight</h3>
-                    <div class="text-royal-blue bg-royal-blue flex flex-wrap justify-center text-">
+                    <div class="text-royal-blue flex flex-wrap justify-center text-">
                         ${skillsHTML}
                     </div>
+                </div>
+                
+                <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
+                     style="background-image: url('${config.rightBannerImageUrl}');">
+                    <a href="${config.rightBannerImageLink}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
+                        ${config.rightBannerImageText}
+                    </a>
                 </div>
             </aside>
         `;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).join('');
 
         return `
-            <footer class="footer bg-steel-blue text-white shadow-lg">
+            <footer class="footer bg-cornflower-blue text-white shadow-lg">
                 <p class="copyright-text">${config.copyrightText}</p>
                 <div class="footer-links-row flex justify-center items-center mt-2">
                     <div class="social-links flex mr-4">
