@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const homeBgImage = "home.png"; // DodgerBlue variant
     const aboutBgImage = "about.png"; // RoyalBlue variant
     const projectsBgImage = "projects.png"; // CornflowerBlue variant
-    const photographyBgImage = "photo.png"; // Navy variant
+    const photographyBgImage = "photo2.png"; // Navy variant
 
     // --- Generate Top Banner HTML ---
     function getTopBannerHTML() {
