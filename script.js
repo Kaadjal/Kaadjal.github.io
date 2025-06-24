@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
         `).join('');
 
         return `
-            <aside class="right-banner bg-light-sky-blue shadow-lg rounded-tl-xl rounded-bl-xl p-6 hidden lg:flex flex-col items-center">
+            <aside class="right-banner bg-light-sky-blue shadow-lg p-6 hidden lg:flex flex-col items-center">
                 <img src="${config.profilePicUrl}" alt="Your Profile Picture" class="profile-pic mb-6 shadow-md">
-                <h2 class="text-2xl font-bold text-steel-blue mb-4">Kaadjal</h2>
-                <p class="text-navy text-sm mb-6">
+                <h2 class="text-2xl font-bold text-navy mb-4">Kaadjal</h2>
+                <p class="text-royal-blue text-sm mb-6">
                     Data Analyst | Data Scientist | Tech Enthousiast | Lifelong Learner
                 </p>
                 <!-- Navigation buttons removed from here -->
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <div class="skills-highlight w-full text-center">
                     <h3 class="text-lg font-semibold text-navy mb-3">Skills Highlight</h3>
-                    <div class="flex flex-wrap justify-center text-">
+                    <div class="text-royal-blue bg-royal-blue flex flex-wrap justify-center text-">
                         ${skillsHTML}
                     </div>
                 </div>
@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'linkedin': iconClass = 'fab fa-linkedin'; break;
                 case 'wellfound': iconClass = 'fab fa-angellist'; break;
                 case 'github': iconClass = 'fab fa-github'; break;
+                case 'microsoft': iconClass = 'fab fa-microsoft'; break;
                 default: iconClass = 'fas fa-link';
             }
             return `<a href="${url}" target="_blank" class="hover:text-sky-blue transition duration-300"><i class="${iconClass}"></i></a>`;
