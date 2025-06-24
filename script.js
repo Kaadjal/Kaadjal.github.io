@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return `
             <aside class="right-banner bg-light-sky-blue shadow-lg rounded-tl-xl rounded-bl-xl p-6 hidden lg:flex flex-col items-center">
                 <img src="${config.profilePicUrl}" alt="Your Profile Picture" class="profile-pic mb-6 shadow-md">
-                <h2 class="text-2xl font-bold text-navy mb-2">Hello!</h2>
+                <h2 class="text-2xl font-bold text-navy mb-2">Kaadjal</h2>
                 <p class="text-gray-700 text-sm mb-6">
                     ${config.rightBannerDescription}
                 </p>
@@ -98,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </aside>
         `;
     }
-
 
     // --- Generate Footer HTML ---
     function getFooterHTML() {
