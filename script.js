@@ -73,14 +73,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="index.html" class="right-banner-button" style="background-image: url('${homeBgImage}');">
                         ${homeIcon} Home
                     </a>
-                    <a href="about.html" class="right-banner-button" style="background-image: url('${aboutBgImage}');">
-                        ${aboutIcon} About Me
-                    </a>
                     <a href="projects.html" class="right-banner-button" style="background-image: url('${projectsBgImage}');">
                         ${projectsIcon} Projects
                     </a>
                     <a href="photography.html" class="right-banner-button" style="background-image: url('${photographyBgImage}');">
                         ${photoIcon} Photography
+                    </a>
+                    <a href="about.html" class="right-banner-button" style="background-image: url('${aboutBgImage}');">
+                        ${aboutIcon} About Me
                     </a>
                 </nav>
 
