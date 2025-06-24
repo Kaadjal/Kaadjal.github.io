@@ -106,7 +106,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: calc(100% - 300px); /* Adjust width for right banner on large screens */
+    width: 100%; /* Changed to span full width */
     height: auto; /* Height adapts to content */
     min-height: 80px; /* Minimum height */
     z-index: 50;
@@ -125,6 +125,7 @@
 }
 
 /* Adjust footer width for smaller screens when right banner is hidden */
+/* This media query is now effectively redundant since width is 100% always, but harmless */
 @media (max-width: 1024px) {
     .footer {
         width: 100%; /* Full width when right banner is hidden */
@@ -193,7 +194,7 @@ body {
     padding-top: 80px; /* Only top banner height */
     padding-right: 320px; /* Width of the right banner */
     padding-bottom: 80px; /* Space for the footer (approx height) */
-    background-color: var(--color-light-sky-blue);
+    background-color: var(--color-white);
     box-sizing: border-box;
     min-height: 100vh; /* Ensure body takes at least full viewport height */
     position: relative; /* Needed for calc() to work correctly on main content */
@@ -232,7 +233,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling for buttons in the right banner */
+/* Styling for buttons in the right banner - removed nav-buttons from here */
 .right-banner-button {
     width: 180px; /* Fixed width for alignment */
     height: 50px; /* Fixed height for alignment */
@@ -277,6 +278,7 @@ body {
 }
 
 /* Style for the small image banner in the right-side banner */
+/* This was previously removed from script.js, but keeping the styles here in case needed for other sections */
 .right-banner .image-text-banner {
     width: 100%;
     background-color: var(--color-navy);
