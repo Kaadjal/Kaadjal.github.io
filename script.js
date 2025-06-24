@@ -1,181 +1,143 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // --- Configuration for Banners and Footer (EDIT THESE VALUES) ---
-    const config = {
-        pageName: "Tanuja Kaadjal Ramsaransing", // Name displayed in the top banner
-        bannerImageUrl: "banner.png", // URL for the top banner background image
-        profilePicUrl: "kaadjal.png", // URL for your profile picture in the right banner
-        rightBannerImageTextHome: "Home", // Text for the small image banner
-        rightBannerImageLinkHome: "index.html", // Link for the small home image banner
-        rightBannerImageUrlHome: "home.png", // URL for the small home image banner background
-        rightBannerImageTextProjects: "Projects", // Text for the small image banner
-        rightBannerImageLinkProjects: "projects.html", // Link for the small image banner
-        rightBannerImageUrlProjects: "projects.png", // URL for the small image banner background
-        rightBannerImageTextPhoto: "Photography", // Text for the small image banner
-        rightBannerImageLinkPhoto: "photography.html", // Link for the small image banner
-        rightBannerImageUrlPhoto: "photo.png", // URL for the small image banner background
-        rightBannerImageTextAbout: "About", // Text for the small image banner
-        rightBannerImageLinkAbout: "about.html", // Link for the small image banner
-        rightBannerImageUrlAbout: "about.png", // URL for the small image banner background
-        copyrightText: "© 2025 Kaadjal. All rights reserved.", // Footer copyright text
-        socialMedia: {
-            linkedin: "https://www.linkedin.com/in/tanuja-ramsaransing-30536b138/", // Replace with your LinkedIn URL
-            wellfound: "https://wellfound.com/u/tanuja-ramsaransing",   // Replace with your Wellfound (AngelList) URL
-            github: "https://github.com/kaadjal",         // Replace with your GitHub URL
-            microsoft: "https://learn.microsoft.com/en-us/users/tanujaramsaransing/",
-            // Add more social links here (e.g., twitter: "https://twitter.com/yourhandle")
-        },
-        skills: [
-            "Python", "PowerBI", "Tableau", "SQL", "Data Analysis", 
-        ]
-    };
-
-    // --- Generate Top Banner HTML ---
-    function getTopBannerHTML() {
-        return `
-            <header class="top-banner" style="background-image: url('${config.bannerImageUrl}');">
-                <div class="banner-text">${config.pageName}</div>
-            </header>
-        `;
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to load HTML content into a placeholder
+    async function loadComponent(placeholderId, htmlContent) {
+        const placeholder = document.getElementById(placeholderId);
+        if (placeholder) {
+            placeholder.innerHTML = htmlContent;
+        }
     }
 
-    // --- Generate Navigation Bar HTML ---
-    // This new function creates the horizontal navigation buttons
-  /* function getNavBarHTML() {
-        return `
-            <nav class="nav-bar-container bg-cornflower-blue shadow-lg">
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="projects.html" class="nav-button">Projects</a>
-                <a href="photography.html" class="nav-button">Photography</a>
-                <a href="about.html" class="nav-button">About Me</a>
-            </nav>
-        `;
-    } */
+    // Common HTML for the Top Banner
+    const topBannerHTML = `
+        <header class="top-banner relative flex items-center justify-center rounded-b-lg shadow-xl">
+            <h1 class="relative z-10 text-white text-3xl md:text-4xl font-bold rounded-lg p-2 bg-navy bg-opacity-70">Tanuja Kaadjal Ramsaransing</h1>
+        </header>
+    `;
 
-    // --- Generate Right-Side Banner HTML ---
-    function getRightBannerHTML() {
-        const socialIconsHTML = Object.entries(config.socialMedia).map(([platform, url]) => {
-            let iconClass = '';
-            switch (platform) {
-                case 'linkedin': iconClass = 'fab fa-linkedin'; break;
-                case 'wellfound': iconClass = 'fab fa-angellist'; break; // Font Awesome icon for AngelList (Wellfound)
-                case 'github': iconClass = 'fab fa-github'; break;
-                case 'microsoft': iconClass = 'fab fa-microsoft'; break;    
-                // Add more cases for other platforms as needed
-                default: iconClass = 'fas fa-link'; // Default generic link icon
+    // Common HTML for the Right-Side Banner
+    const rightBannerHTML = `
+        <aside class="right-banner p-4 flex flex-col items-center shadow-2xl rounded-l-lg overflow-y-hidden">
+            <div class="mb-6">
+                <img src="kaadjal.png" class="w-32 h-32 rounded-full object-cover border-4 border-dodgerblue shadow-lg">
+            </div>
+
+            <h2 class="text-xl font-bold text-white mb-2">Your Name</h2>
+            <p class="text-white text-center text-sm mb-4">Web Developer | Blogger | Photographer</p>
+
+            <!-- Social Media Links (Right Banner) -->
+            <div class="flex space-x-4 mb-8">
+                <a href="https://www.linkedin.com/in/tanuja-ramsaransing-30536b138/" target="_blank" class="text-white hover:text-dodgerblue transition-colors duration-300">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="https://github.com/kaadjal" target="_blank" class="text-white hover:text-dodgerblue transition-colors duration-300">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="https://wellfound.com/u/tanuja-ramsaransing" target="_blank" class="text-white hover:text-dodgerblue transition-colors duration-300">
+                    <i class="fab fa-angellist text-2xl"></i> <!-- Font Awesome for Wellfound (AngelList) -->
+                </a>
+                <!-- Add more social links as needed -->
+                <a href="https://learn.microsoft.com/en-us/users/tanujaramsaransing/" target="_blank" class="text-white hover:text-dodgerblue transition-colors duration-300">
+                    <i class="fab fa-microsoft text-2xl"></i>
+                </a>
+            </div>
+
+            <!-- Highlighted Skills -->
+            <div class="w-full mb-8">
+                <h3 class="text-lg font-semibold text-white mb-3 text-center">Skills</h3>
+                <ul class="text-white text-sm list-disc list-inside space-y-1">
+                    <li class="rounded-md px-2 py-1 bg-dodgerblue bg-opacity-70 mb-1">PowerBI</li>
+                    <li class="rounded-md px-2 py-1 bg-dodgerblue bg-opacity-70 mb-1">Tableau</li>
+                    <li class="rounded-md px-2 py-1 bg-dodgerblue bg-opacity-70 mb-1">Python</li>
+                    <li class="rounded-md px-2 py-1 bg-dodgerblue bg-opacity-70 mb-1">HTML/CSS</li>
+                    <li class="rounded-md px-2 py-1 bg-dodgerblue bg-opacity-70 mb-1">SQL</li>
+                    <li class="rounded-md px-2 py-1 bg-dodgerblue bg-opacity-70 mb-1">Cloud Platforms</li>
+                </ul>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="w-full flex flex-col space-y-4">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home text-xl">home.png</i>
+                    <span>Home</span>
+                </a>
+                <a href="projects.html" class="nav-button">
+                    <i class="fas fa-tasks text-xl">projects.png</i>
+                    <span>Projects</span>
+                </a>
+                <a href="photography.html" class="nav-button">
+                    <i class="fas fa-camera-retro text-xl">photo.png</i>
+                    <span>Photography</span>
+                </a>
+                <a href="about.html" class="nav-button">
+                    <i class="fas fa-user text-xl">about.png</i>
+                    <span>About Me</span>
+                </a>
+            </div>
+        </aside>
+    `;
+
+    // Common HTML for the Footer
+    const footerHTML = `
+        <footer class="footer-section text-center shadow-inner rounded-t-lg">
+            <!-- Navigation Links -->
+            <div class="flex justify-center space-x-6 mb-4 text-sm md:text-base">
+                <a href="index.html" class="text-white hover:text-lightskyblue transition-colors duration-300">Home</a>
+                <span class="text-white">|</span>
+                <a href="about.html" class="text-white hover:text-lightskyblue transition-colors duration-300">About Me</a>
+                <span class="text-white">|</span>
+                <a href="projects.html" class="text-white hover:text-lightskyblue transition-colors duration-300">Projects</a>
+                <span class="text-white">|</span>
+                <a href="photography.html" class="text-white hover:text-lightskyblue transition-colors duration-300">Photography</a>
+            </div>
+
+            <!-- Social Media and Copyright -->
+            <div class="flex items-center justify-center space-x-4 mb-2">
+                <a href="https://www.linkedin.com/in/tanuja-ramsaransing-30536b138/" target="_blank" class="text-white hover:text-dodgerblue transition-colors duration-300">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="https://github.com/kaadjal" target="_blank" class="text-white hover:text-dodgerblue transition-colors duration-300">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://wellfound.com/u/tanuja-ramsaransing" target="_blank" class="text-white hover:text-dodgerblue transition-colors duration-300">
+                    <i class="fab fa-angellist text-xl"></i>
+                </a>
+                <!-- Add more social links as needed -->
+                <a href="https://learn.microsoft.com/en-us/users/tanujaramsaransing/" target="_blank" class="text-white hover:text-dodgerblue transition-colors duration-300">
+                    <i class="fab fa-microsoft text-xl"></i>
+                </a>
+            </div>
+            <p class="text-white text-xs md:text-sm">&copy; 2024 Your Name. All rights reserved.</p>
+        </footer>
+    `;
+
+    // Load components
+    loadComponent('top-banner-placeholder', topBannerHTML);
+    loadComponent('right-banner-placeholder', rightBannerHTML);
+    loadComponent('footer-placeholder', footerHTML);
+
+    // Footer visibility logic based on scroll
+    const footer = document.querySelector('.footer-section');
+    if (footer) {
+        const toggleFooterVisibility = () => {
+            // Check if the user has scrolled near the bottom of the page
+            // (document.documentElement.scrollHeight - window.innerHeight) is the maximum scrollable height
+            // window.scrollY is the current scroll position
+            const scrollThreshold = document.documentElement.scrollHeight - window.innerHeight - 200; // 200px from bottom
+            if (window.scrollY >= scrollThreshold) {
+                footer.classList.add('show');
+            } else {
+                footer.classList.remove('show');
             }
-            return `<a href="${url}" target="_blank" class="hover:text-cornflower-blue transition duration-300"><i class="${iconClass}"></i></a>`;
-        }).join('');
+        };
 
-        const skillsHTML = config.skills.map(skill => `
-            <span class="inline-block bg-cornflower-blue text-white text-xs px-3 py-1 rounded-full mr-2 mb-2 shadow-sm">${skill}</span>
-        `).join('');
+        // Add scroll event listener
+        window.addEventListener('scroll', toggleFooterVisibility);
 
-        return `
-            <aside class="right-banner bg-light-sky-blue shadow-lg p-6 hidden lg:flex flex-col items-center">
-                <img src="${config.profilePicUrl}" alt="Your Profile Picture" class="profile-pic mb-6 shadow-md">
-                <h2 class="text-2xl font-bold text-navy mb-4">Kaadjal</h2>
-                <p class="text-white text-sm mb-6">
-                    Data Analyst | Data Scientist | Tech Enthousiast | Lifelong Learner
-                </p>
-                <!-- Navigation buttons removed from here -->
-                
-                <div class="social-icons flex justify-center w-full mb-6 space-x-4">
-                    ${socialIconsHTML}
-                </div>
-
-                <div class="skills-highlight w-full text-center">
-                    <h3 class="text-lg font-semibold text-navy mb-3">Skills Highlight</h3>
-                    <div class="text-royal-blue flex flex-wrap justify-center text-">
-                        ${skillsHTML}
-                    </div>
-                </div>
-
-                <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
-                     style="background-image: url('${config.rightBannerImageUrlHome}');">
-                    <a href="${config.rightBannerImageLinkHome}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
-                        ${config.rightBannerImageTextHome}
-                    </a>
-                </div> 
-    
-                <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
-                     style="background-image: url('${config.rightBannerImageUrlProjects}');">
-                    <a href="${config.rightBannerImageLinkProjects}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
-                        ${config.rightBannerImageTextProjects}
-                    </a>
-                </div>
-
-                <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
-                     style="background-image: url('${config.rightBannerImageUrlPhoto}');">
-                    <a href="${config.rightBannerImageLinkPhoto}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
-                        ${config.rightBannerImageTextPhoto}
-                    </a>
-                </div>
-
-                <div class="image-text-banner relative flex items-center justify-center p-4 rounded-xl my-6 overflow-hidden"
-                     style="background-image: url('${config.rightBannerImageUrlAbout}');">
-                    <a href="${config.rightBannerImageLinkAbout}" target="_blank" class="image-text-banner-content text-white font-semibold text-lg text-center relative z-20 hover:underline">
-                        ${config.rightBannerImageTextAbout}
-                    </a>
-                </div>
-            </aside>
-        `;
+        // Also check on initial load in case the page is short
+        toggleFooterVisibility();
     }
-
-    // --- Generate Footer HTML ---
-    function getFooterHTML() {
-        const socialLinksHTML = Object.entries(config.socialMedia).map(([platform, url]) => {
-            let iconClass = '';
-            switch (platform) {
-                case 'linkedin': iconClass = 'fab fa-linkedin'; break;
-                case 'wellfound': iconClass = 'fab fa-angellist'; break;
-                case 'github': iconClass = 'fab fa-github'; break;
-                case 'microsoft': iconClass = 'fab fa-microsoft'; break;
-                default: iconClass = 'fas fa-link';
-            }
-            return `<a href="${url}" target="_blank" class="hover:text-sky-blue transition duration-300"><i class="${iconClass}"></i></a>`;
-        }).join('');
-
-        return `
-            <footer class="footer bg-cornflower-blue text-white shadow-lg">
-                <p class="copyright-text">${config.copyrightText}</p>
-                <div class="footer-links-row flex justify-center items-center mt-2">
-                    <div class="social-links flex mr-4">
-                        ${socialLinksHTML}
-                    </div>
-                </div>
-            </footer>
-        `;
-    }
-
-    // --- Inject the elements into the DOM ---
-    const topBannerPlaceholder = document.getElementById('top-banner-placeholder');
-    if (topBannerPlaceholder) {
-        topBannerPlaceholder.innerHTML = getTopBannerHTML();
-    }
-
-    // NEW: Inject Navigation Bar
-    const navBarPlaceholder = document.getElementById('nav-bar-placeholder');
-    if (navBarPlaceholder) {
-        navBarPlaceholder.innerHTML = getNavBarHTML();
-    }
-
-    const rightBannerPlaceholder = document.getElementById('right-banner-placeholder');
-    if (rightBannerPlaceholder) {
-        rightBannerPlaceholder.innerHTML = getRightBannerHTML();
-    }
-
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (footerPlaceholder) {
-        footerPlaceholder.innerHTML = getFooterHTML();
-        // Removed the scroll event listener as the footer is no longer fixed
-    }
-
-    // --- Image Resize Functionality (for large blog/project images) ---
-    function setupResponsiveImages() {
-        document.querySelectorAll('.main-content-wrapper img.large-image').forEach(img => {
-            console.log(`Processing image: ${img.src}`);
-        });
-    }
+});
 
     setupResponsiveImages();
 });
