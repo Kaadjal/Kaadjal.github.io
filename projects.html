@@ -45,22 +45,21 @@
     <div class="main-content-wrapper flex justify-center py-8 px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl w-full">
             <h1 class="text-4xl font-bold text-dark-blue mb-8 text-center">My Projects</h1>
+            
+            <!-- Search Bar Section -->
+            <div class="search-bar-container flex justify-center mb-8">
+                <input type="text" id="search-input" placeholder="Search blog posts..."
+                       class="p-3 border border-cornflower-blue rounded-l-lg focus:outline-none focus:ring-2 focus:ring-dodger-blue flex-grow max-w-md">
+                <button id="search-button" class="bg-cornflower-blue text-white px-5 py-3 rounded-r-lg hover:bg-royal-blue transition duration-300">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
 
-            <!-- Example Project 1 -->
-            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
-                <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">Project Alpha: Interactive Dashboard</h2>
-                <img src="https://placehold.co/800x450/87CEEB/FFFFFF?text=Project+Alpha" alt="Project Alpha Image" class="w-full h-auto rounded-lg mb-6 max-w-full large-image">
-                <p class="text-gray-800 leading-relaxed text-center mb-4">
-                    Developed an interactive dashboard application using React.js and D3.js for data visualization. This project focuses on presenting complex datasets in an intuitive and visually appealing manner.
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#" target="_blank" class="px-4 py-2 bg-dark-blue text-white rounded-lg hover:bg-sky-blue transition duration-300">View Demo</a>
-                    <a href="#" target="_blank" class="px-4 py-2 bg-gray-200 text-dark-blue rounded-lg hover:bg-gray-300 transition duration-300">GitHub Repo</a>
-                </div>
-            </article>
+            <!-- Add more projects here following the same structure -->
 
             <!-- Example Project 2 -->
-            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center">
+            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center"
+                data-keywords="python">
                 <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">Project Beta: E-commerce Backend API</h2>
                 <img src="https://placehold.co/800x450/ADD8E6/00008B?text=Project+Beta" alt="Project Beta Image" class="w-full h-auto rounded-lg mb-6 max-w-full large-image">
                 <p class="text-gray-800 leading-relaxed text-center mb-4">
@@ -70,7 +69,38 @@
                     <a href="#" target="_blank" class="px-4 py-2 bg-dark-blue text-white rounded-lg hover:bg-sky-blue transition duration-300">View Docs</a>
                     <a href="#" target="_blank" class="px-4 py-2 bg-gray-200 text-dark-blue rounded-lg hover:bg-gray-300 transition duration-300">GitHub Repo</a>
                 </div>
+                    <div class="tags-container mt-4 flex flex-wrap justify-center gap-2">
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Python</span>
+                </div>
             </article>
+            
+            <!-- PowerBI - Project WoningNood -->
+            <article class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col items-center"
+                data-keywords="dashboard, data visualisation, powerbi, data">
+                <h2 class="text-3xl font-semibold text-cornflower-blue mb-4 text-center">Project Woningnood</h2>
+                <img src="https://placehold.co/800x450/87CEEB/FFFFFF?text=Project+Alpha" alt="Project Alpha Image" class="w-full h-auto rounded-lg mb-6 max-w-full large-image">
+                <p class="text-gray-800 leading-relaxed text-center mb-4">
+                    Developed an interactive dashboard with PowerBI for a fictious realtor agency. The data used to develop this dashboard was obtained from open data from <a = href="https://opendata.cbs.nl/statline/portal.html?_la=en&_catalog=CBS">CBS</a>. <br>
+                    A dashboard was created where the following questions were answered: 
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+                    
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" target="_blank" class="px-4 py-2 bg-dark-blue text-white rounded-lg hover:bg-sky-blue transition duration-300">View Demo</a>
+                    <a href="#" target="_blank" class="px-4 py-2 bg-gray-200 text-dark-blue rounded-lg hover:bg-gray-300 transition duration-300">GitHub Repo</a>
+                </div>
+                <div class="tags-container mt-4 flex flex-wrap justify-center gap-2">
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Dashboard</span>
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Data Visualisation</span>
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">PowerBI</span>
+                    <span class="bg-royal-blue text-white text-xs px-2 py-1 rounded-full">Data</span>
+                </div>
+            </article>
+
+
 
             <!-- Add more projects here following the same structure -->
 
